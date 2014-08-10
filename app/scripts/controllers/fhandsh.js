@@ -12,6 +12,13 @@ angular.module('throatApp')
 
   this.demographics = Data.get().demographics;
   this.chiefComplaint = Data.get().chiefComplaint[0];
+
+  this.familyHistory = Data.get().familyHistory;
+  this.familyHistoryComments = Data.get().familyHistoryComments;
   
+  $scope.familyHistoryList = [
+  'lives with children',
+  'family members or close contacts who were recently diagnosed with GABHS'
+  ];
 
 });

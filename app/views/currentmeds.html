@@ -1,18 +1,15 @@
-<div class="jumbotron" ng-controller="FHAndSHCtrl as patient">
+<div class="jumbotron" ng-controller="CurrentMedsCtrl as patient">
 
   <h3>Chief Complaint for {{ patient.demographics.firstName+" "+patient.demographics.lastName+" is  "+patient.chiefComplaint }}</h3>
 
-  <p>Family History and Social History</p>
+  <p>Current Medications</p>
 
   <fs-form-for model="patient">
     <fieldset class="form-horizontal">
 
-    <fs-input as="fs-checkbox" name="familyHistory" label="Family History" items="familyHistoryList">{{ item }}</fs-input>
 	
     </fieldset>
 
-  <textarea class="form-control" rows="3" ng-model="familyHistoryComments"></textarea>
-  <p>
 
   </fs-form-for>
 

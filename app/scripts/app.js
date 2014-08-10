@@ -44,6 +44,10 @@ var throatApp = angular
         templateUrl: 'views/fhandsh.html',
         controller: 'FHAndSHCtrl'
       })
+      .when('/currentmeds', {
+        templateUrl: 'views/currentmeds.html',
+        controller: 'CurrentMedsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -75,7 +79,9 @@ var patient = { demographics:
                   HPI: { historyOfPresentIllness: [],
                          episodesPastYear: 0,
                          episodes2ndYear: 0,
-                         episodes3rdYear: 0 }
+                         episodes3rdYear: 0 },
+                  familyHistory: [],
+                  familyHistoryComments: ""
 
 };
 
