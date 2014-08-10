@@ -1,0 +1,17 @@
+<div class="jumbotron" ng-controller="FHAndSHCtrl as patient">
+
+  <h3>Chief Complaint for {{ patient.demographics.firstName+" "+patient.demographics.lastName+" is  "+patient.chiefComplaint }}</h3>
+
+  <p>Family History and Social History</p>
+
+  <fs-form-for model="patient">
+    <fieldset class="form-horizontal">
+	
+    </fieldset>
+
+  </fs-form-for>
+
+  <p><a class="btn btn-lg btn-success" ng-href="#/fhandsh">OK<span class="glyphicon"></span></a>
+  <a class="btn btn-lg" ng-href="#/demographics">Cancel<span class="glyphicon"></span></a></p>
+  
+</div>

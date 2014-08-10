@@ -1,0 +1,59 @@
+<div class="row" ng-controller="PatientCtrl as patient">
+  <div class="col-xs-5">
+
+  <h2>Verify demographics</h2>
+  
+  <fs-form-for model="patient">
+    
+      <fieldset class="form-horizontal">
+      <legend>Patient</legend>    
+      <fs-input as="text" name="demographics.employeeID" required="" label="Walsmart Employee ID"></fs-input>
+      <fs-input as="text" name="demographics.firstName" required="" label="First Name"></fs-input>
+      <fs-input as="text" name="demographics.lastName" required="" label="Last Name"></fs-input>
+      <fs-input as="fs-radio" ng-change="showSex()" name="demographics.sex" label="Sex" items="sex"></fs-input>
+
+      <div class="form-group">
+      <div class="col-xs-5 col-xs-offset-1">
+        <fs-input as="fs-date" ng-model-onblur ng-change='calcAge()' name="demographics.dateOfBirth" required="" label="DOB"></fs-input>
+      </div>
+      <div class="col-xs-5 col-xs-offset-1">
+        <fs-input as="text" ng-disabled="true" name="demographics.age" label="Age"></fs-input>
+      </div>
+      </div>
+      <fs-input as="text" name="demographics.guardian" required="" label="Guardian"></fs-input>
+      </fieldset>
+      </fs-form-for>
+
+</div>
+
+<div class="col-xs-5 col-xs-offset-1">
+<fs-form-for model="patient">
+  <fieldset class="form-horizontal">
+      <legend>Address</legend>    
+      <fs-input as="text" name="demographics.streetAddress" required="" label="Street Address"></fs-input>
+      <fs-input as="text" name="demographics.apartmentNumber" required="" label="Apartment Number"></fs-input>
+      <fs-input as="text" name="demographics.city" required="" label="City"></fs-input>
+
+      <fs-input as="fs-select" name="demographics.state" required="" items="states" label="State">{{item}}</fs-input>
+
+      <fs-input as="text" name="demographics.zip" required="" label="Zip"></fs-input>
+
+      <legend>Contact</legend>    
+      <fs-input as="text" name="demographics.phone" required="" label="Phone"></fs-input>
+      <fs-input as="email" name="demographics.email" required="" label="Email"></fs-input>
+      </div>
+      
+  </fs-form-for>
+
+  <!--form name="sexForm" >
+  <input type="radio" ng-change="showSex()" ng-model="patient.demographics.sex" value="M">  Male <br/>
+  <input type="radio" ng-change="showSex()" ng-model="patient.demographics.sex" value="F"> Female <br/>
+  </form-->
+  
+  
+  </div>
+</div>
+
+  <p><a class="btn btn-lg btn-success" ng-href="#/chiefcompl">Verify<span class="glyphicon"></span><a>
+  <a class="btn btn-lg" ng-href="#/chiefcompl">Cancel<span class="glyphicon"></span></a></p>
+
