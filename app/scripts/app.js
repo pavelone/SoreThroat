@@ -49,6 +49,10 @@ var throatApp = angular
         templateUrl: 'views/currentmeds.html',
         controller: 'CurrentMedsCtrl'
       })
+      .when('/allergies', {
+        templateUrl: 'views/allergies.html',
+        controller: 'AllergiesCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -84,8 +88,9 @@ var patient = { demographics:
                   familyHistory: [],
                   familyHistoryComments: "",
                   currentMeds: {currentMedicationChecks: [],
-                  currentMedications: []}
-
+                  currentMedications: []},
+                  allergies: {allergiesChecks: [],
+                  allergies: []}
 };
 
 function set(data) {

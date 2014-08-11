@@ -1,11 +1,11 @@
-<div class="jumbotron" ng-controller="CurrentMedsCtrl as patient">
+<div class="jumbotron" ng-controller="AllergiesCtrl as patient">
 
   <h3>Chief Complaint for {{ patient.demographics.firstName+" "+patient.demographics.lastName+" is  "+patient.chiefComplaint }}</h3>
 
   <fs-form-for model="patient">
     <fieldset class="form-horizontal">
 
-    <fs-input as="fs-checkbox" name="currentMeds.currentMedicationChecks" label="Current medications" items="currentMedicationCheckList">{{ item }}</fs-input>
+    <fs-input as="fs-checkbox" name="allergies.allergiesChecks" label="Allergies" items="allergiesCheckList">{{ item }}</fs-input>
 
     </fieldset>
 
@@ -13,7 +13,7 @@
 
   <div class="gridStyle" ng-grid="patient.gridOptions"></div><p>
 
-  <p><a class="btn btn-lg btn-info" ng-click="patient.loadCurrentMeds()" ng-href="#/currentmeds">Load Medications<span class="glyphicon"></span></a>
+  <p><a class="btn btn-lg btn-info" ng-click="patient.loadAllergies()" ng-href="#/allergies">Load Allergies<span class="glyphicon"></span></a>
   <a class="btn btn-lg btn-success" ng-href="#/allergies">Verify<span class="glyphicon"></span></a>
   <a class="btn btn-lg" ng-href="#/demographics">Cancel<span class="glyphicon"></span></a></p>
   
