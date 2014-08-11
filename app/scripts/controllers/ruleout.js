@@ -31,8 +31,8 @@ angular.module('throatApp')
 
   $scope.emergentDiagnosesList = [
   'Epiglottitis',
-  'inability to swallow or obvious drooling',
-  'swelling of the face or neck',
+  'Peritonsillar abscess',
+  'Retropharyngeal abscess',
   'none of the above'
   ];
 

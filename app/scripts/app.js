@@ -53,6 +53,10 @@ var throatApp = angular
         templateUrl: 'views/allergies.html',
         controller: 'AllergiesCtrl'
       })
+      .when('/differentialdiag', {
+        templateUrl: 'views/differentialdiag.html',
+        controller: 'DifferentialDiagCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -90,7 +94,28 @@ var patient = { demographics:
                   currentMeds: {currentMedicationChecks: [],
                   currentMedications: []},
                   allergies: {allergiesChecks: [],
-                  allergies: []}
+                  allergies: []},
+                  differentialDiagnosis: {
+                    bacterialPharyngitisCauses: ['GABHS',
+                                                 'Mycoplasma pneumonia (5% to 16% of cases of pharyngitis in children older than age 6)',
+                                                 'Neisseria gonorrhoeae (ask about sexual history)',
+                                                 'non-Group A streptococci (Group C and G)',
+                                                 'Corynebacterium diphtheriae (hallmarked by the formation of a tightly adhering gray membrane that bleeds when dislodged)'],
+                    otherBacterialPathogens: ['Staphylococcus aureus',
+                                              'Haemophilus influenzae',
+                                              'Moraxella catarrhalis',
+                                              'Bacteroides fragilis',
+                                              'Bacteroides oralis',
+                                              'Bacteroides melaninogenicus',
+                                              'Fusobacterium species',
+                                              'Peptostreptococcus species',
+                                              'Chlamydia trachomatis'],
+                    viralCauses: ['Viral pharyngitis (Rhinovirus, nearly 20% of pharyngitis cases)',
+                                 'Laryngitis',
+                                 'Mononucleosis',
+                                 'Upper Respiratory Infections'],
+                    other: []
+                  }
 };
 
 function set(data) {

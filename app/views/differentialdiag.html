@@ -1,0 +1,29 @@
+<div class="jumbotron" ng-controller="DifferentialDiagCtrl as patient">
+
+  <h3>Chief Complaint for {{ patient.demographics.firstName+" "+patient.demographics.lastName+" is  "+patient.chiefComplaint }}</h3>
+
+  <h2>Differential Diagnosis</h2>
+
+  <fs-form-for model="patient">
+    <fieldset class="form-horizontal">
+
+	    <fs-input as="fs-checkbox" name="differentialDiagnosis.emergentDiagnoses" label="Emergent Diagnoses" items="emergentDiagnosesList">{{ item }}<a ng-href="{{$parent.$parent.emergentDiagnosesEducation[$index]}}" target="_blank"><img src="../images/information-icon.png" alt="info" width="16" height="16"></a></fs-input>
+
+      <fs-input as="fs-checkbox" name="differentialDiagnosis.bacterialPharyngitisCauses" label="Bacterial Pharyngitis Causes" items="bacterialPharyngitisCausesList">{{ item }}<a ng-href="{{$parent.$parent.bacterialPharyngitisCausesEducation[$index]}}" target="_blank"><img src="../images/information-icon.png" alt="info" width="16" height="16"></a></fs-input>
+
+      <div ng-show="patient.showOther" >
+      <fs-input as="fs-checkbox" name="differentialDiagnosis.otherBacterialPathogens" label="Other Bacterial Pathogens" items="otherBacterialPathogensList">{{ item }}<a ng-href="{{$parent.$parent.otherBacterialPathogenEducation[$index]}}" target="_blank"><img src="../images/information-icon.png" alt="info" width="16" height="16"></a></fs-input>
+      </div>
+
+      <fs-input as="fs-checkbox" name="differentialDiagnosis.viralCauses" label="Viral causes" items="viralCausesList">{{ item }}<a ng-href="{{$parent.$parent.viralCausesEducation[$index]}}" target="_blank"><img src="../images/information-icon.png" alt="info" width="16" height="16"></a></fs-input>
+
+    </fieldset>
+  </fs-form-for>
+
+  <p>
+  <a class="btn btn-lg btn-info" ng-click="patient.toggleOther()" ng-href="#/differentialdiag">{{patient.buttonLabel}}<span class="glyphicon"></span></a>
+  <a class="btn btn-lg btn-info" ng-href="#/differentialdiag">OK<span class="glyphicon"></span></a>
+  <a class="btn btn-lg" ng-href="#/demographics">Cancel<span class="glyphicon"></span></a></p>
+
+  
+</div>
