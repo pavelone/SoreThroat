@@ -16,7 +16,8 @@ var throatApp = angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'formstamp'
+    'formstamp',
+    'ngGrid'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -81,7 +82,9 @@ var patient = { demographics:
                          episodes2ndYear: 0,
                          episodes3rdYear: 0 },
                   familyHistory: [],
-                  familyHistoryComments: ""
+                  familyHistoryComments: "",
+                  currentMeds: {currentMedicationChecks: [],
+                  currentMedications: []}
 
 };
 
@@ -97,6 +100,6 @@ return {
 set: set,
 get: get
 };
-
+  
 });
  
