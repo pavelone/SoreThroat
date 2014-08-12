@@ -76,7 +76,7 @@ var patient = { demographics:
                    sex: "M",
                    dateOfBirth: new Date(),
                    //temporary for testing
-                   age: 12,
+                   age: 22,
                    guardian: "Someone",
                    streetAddress: "123 Happy Str.",
                    apartmentNumber: "8",

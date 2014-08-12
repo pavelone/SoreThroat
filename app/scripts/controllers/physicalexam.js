@@ -51,6 +51,10 @@ angular.module('throatApp')
       checkRSTDecision = "Perform RST. ";
       checkRSTReason = "It should be used as a first-line diagnostic test in all pediatric patients. ";
     }
+    if ((this.demographics.age >= 15) && (this.centorScore.length > 1)){
+      checkRSTDecision = "Perform RST. ";
+      checkRSTReason = "A score of 2 or more is suggestive of a GABHS infection and should have an RST performed. ";
+    }
 
     return { rstDecision: checkRSTDecision, rstReason: checkRSTReason, rstDisabled: checkRSTDisabled};
   }
