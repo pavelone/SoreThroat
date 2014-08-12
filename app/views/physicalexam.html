@@ -1,0 +1,64 @@
+<div class="jumbotron" ng-controller="PhysicalExamCtrl as patient">
+
+  <h3>Chief Complaint for {{ patient.demographics.firstName+" "+patient.demographics.lastName+" is  "+patient.chiefComplaint }}</h3>
+
+  <h2>Physical Examination</h2>
+
+  <fs-form-for model="patient">
+    <fieldset class="form-horizontal">
+      <legend>Patient</legend>    
+
+        <div class="form-group">
+          <div class="col-xs-6">      
+          <fs-input as="text" ng-disabled="true" name="demographics.age" label="Age"></fs-input>
+          </div>
+        </div>
+
+        <legend>Vital signs</legend>
+        <div class="form-group">
+          <div class="col-xs-6">
+            <fs-input as="text" name="vitals.weight" label="Weight"></fs-input>
+          </div>
+          <div class="col-xs-6">
+            lbs &nbsp; {{ patient.vitals.weight/2.20462262 | number:1 }} kg
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-6">
+            <fs-input as="text" ng-change="patient.updateCentorScore()" name="vitals.temperature" label="Tempe rature"></fs-input>
+          </div>
+          <div class="col-xs-6">
+            ℉ / {{ (patient.vitals.temperature - 32)* 5.0/9.0 | number:1 }} ℃
+          </div>
+        </div>        
+
+      <legend>Centor score & RST</legend>
+      <div class="form-group">
+        <div class="col-xs-6">
+          <fs-input as="fs-checkbox" name="centorScore" label="Centor Score" items="centorScoreList">{{ item }}</fs-input>
+        </div>
+        <div class="col-xs-6">
+          <strong>{{"Score: "+patient.centorScore.length}}</strong>
+        </div>
+      </div>
+      
+      <strong>{{patient.rstDecision}}</strong> <em>{{patient.rstReason}}</em><p>
+
+      <div class="form-group">
+        <div class="col-xs-6">
+          <fs-input as="fs-radio" name="pe.rst" label="RST" items="rstList" ng-disabled="patient.checkRSTNecessity()"></fs-input>
+        </div>
+        <div class="col-xs-6">
+          <strong>{{"Recommendations:"}}</strong>
+        </div>
+      </div>  
+
+    </fieldset>
+  </fs-form-for>
+
+  <p>
+  <a class="btn btn-lg btn-info" ng-href="#/physicalexam">OK<span class="glyphicon"></span></a>
+  <a class="btn btn-lg" ng-href="#/demographics">Cancel<span class="glyphicon"></span></a></p>
+
+  
+</div>

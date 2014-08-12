@@ -23,7 +23,7 @@ angular.module('throatApp')
 
   $scope.currentMedicationCheckList = [
   'No known current medicaitons',
-  'Patient doesn\'t take any antibiotics currently'
+  'Patient takes antibiotics currently'
   ];
 
 this.gridOptions = { 
@@ -62,7 +62,7 @@ this.loadCurrentMeds = function() {
 	timestamp: dateToShow(dateToday)+" "+timeToShow(dateToday), comments: "with evening meal"}];
 
 	this.currentMeds.currentMedications = $scope.currentMedications;
-	this.currentMeds.currentMedicationChecks = ["Patient doesn\'t take any antibiotics currently"];
+	//this.currentMeds.currentMedicationChecks = ["Patient takes antibiotics currently"];
 }
 
 });

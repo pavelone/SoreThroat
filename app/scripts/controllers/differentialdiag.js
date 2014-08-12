@@ -17,7 +17,7 @@ angular.module('throatApp')
   this.differentialDiagnosis = Data.get().differentialDiagnosis;
 
   this.showOther = false;
-  this.buttonLabel = "Show Other Bacterial Causes";
+  this.buttonLabel = "Show Other";
 
   $scope.emergentDiagnosesList = [
   'Epiglottitis',
@@ -49,10 +49,23 @@ angular.module('throatApp')
   ];
 
   $scope.viralCausesList = [
-  'Viral pharyngitis (Rhinovirus, nearly 20% of pharyngitis cases)',
+  'Viral pharyngitis (Rhinovirus, nearly 20% of pharyngitis cases or Adenovirus)',
   'Laryngitis',
   'Mononucleosis',
   'Upper Respiratory Infections',
+  'none of the above'
+  ];
+
+  $scope.otherViralCausesList = [
+  'Epstein–Barr virus',
+  'cytomegalovirus',
+  'herpes simplex virus',
+  'respiratory syncytial virus',
+  'HIV',
+  'parainfluenza',
+  'influenza',
+  'enterovirus',
+  'coronavirus',
   'none of the above'
   ];
 
@@ -93,12 +106,26 @@ angular.module('throatApp')
   'http://google.com'
   ];
 
+  $scope.otherViralCausesEducation = [
+  'http://google.com',
+  'http://google.com',
+  'http://google.com',
+  'http://google.com',
+  'http://google.com',
+  'http://google.com',
+  'http://google.com',
+  'http://google.com',
+  'http://google.com',
+  'http://google.com'
+  ];
+
+
   this.toggleOther = function() {
     this.showOther = !this.showOther;
     if (this.showOther){
-      this.buttonLabel = "Hide Other Bacterial Causes";
+      this.buttonLabel = "Hide Other";
     } else {
-      this.buttonLabel = "Show Other Bacterial Causes";
+      this.buttonLabel = "Show Other";
     }
   }
 

@@ -57,6 +57,10 @@ var throatApp = angular
         templateUrl: 'views/differentialdiag.html',
         controller: 'DifferentialDiagCtrl'
       })
+      .when('/physicalexam', {
+        templateUrl: 'views/physicalexam.html',
+        controller: 'PhysicalExamCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -71,7 +75,8 @@ var patient = { demographics:
                    //sex: { id: "M", label: "Male" },
                    sex: "M",
                    dateOfBirth: new Date(),
-                   age: 0,
+                   //temporary for testing
+                   age: 17,
                    guardian: "Someone",
                    streetAddress: "123 Happy Str.",
                    apartmentNumber: "8",
@@ -79,7 +84,7 @@ var patient = { demographics:
                    state: "California",
                    zip: "90123",
                    phone: "123-123-1234",
-                   email: "pavel.s.smirnov@gmail.com"
+                   email: "johndow@gmail.com"
                   },
                   chiefComplaint: ["Sore throat"],
                   emergentSymptoms: [],
@@ -114,8 +119,23 @@ var patient = { demographics:
                                  'Laryngitis',
                                  'Mononucleosis',
                                  'Upper Respiratory Infections'],
+                    otherViralCauses : [
+                                  'Epstein–Barr virus',
+                                  'cytomegalovirus',
+                                  'herpes simplex virus',
+                                  'respiratory syncytial virus',
+                                  'HIV',
+                                  'parainfluenza',
+                                  'influenza',
+                                  'enterovirus',
+                                  'coronavirus'],
                     other: []
-                  }
+                  },
+                    vitals: {
+                      weight: 50,
+                      temperature: 100
+                    },
+                  centorScore: []
 };
 
 function set(data) {
