@@ -1,0 +1,18 @@
+<div class="jumbotron" ng-controller="TreatmentCtrl as patient">
+
+  <h3>Chief Complaint for {{ patient.demographics.firstName+" "+patient.demographics.lastName+" is  "+patient.chiefComplaint }}</h3>
+
+  <h2>Treatment</h2>
+  <em>Age: {{patient.demographics.age}}, weight: {{patient.vitals.weight}} lbs, temperature: {{patient.vitals.temperature}} ℉, provisional diagnosis: {{patient.pe.provisionalDiagnosis}}, observed symptoms: <span ng-repeat="item in patient.pe.symptomsObserved">{{item}}, </span>not observed symptoms: <span ng-repeat="item in patient.pe.symptomsNotObserved">{{item}}, </span>Centor score: {{patient.centorScore.length}}, RST: {{patient.testing.rst}}, {{patient.recommendations.cultureDecisions}}, {{patient.recommendations.treatmentDecisions}}.</em>
+  <fs-form-for model="patient">
+    <fieldset class="form-horizontal">
+
+    </fieldset>
+  </fs-form-for>
+
+  <p>
+  <a class="btn btn-lg btn-info" ng-href="#/Education">Treatment<span class="glyphicon"></span></a>
+  <a class="btn btn-lg" ng-href="#/demographics">Cancel<span class="glyphicon"></span></a></p>
+
+  
+</div>

@@ -61,6 +61,10 @@ var throatApp = angular
         templateUrl: 'views/physicalexam.html',
         controller: 'PhysicalExamCtrl'
       })
+      .when('/treatment', {
+        templateUrl: 'views/treatment.html',
+        controller: 'TreatmentCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -72,8 +76,8 @@ var patient = { demographics:
                   {employeeID: 12345,
                    firstName: "John",
                    lastName: "Dow",
-                   //sex: { id: "M", label: "Male" },
-                   sex: "M",
+                   //sex: {id: 'M', label: 'Male'},
+                   sex: "Male",
                    dateOfBirth: new Date(),
                    //temporary for testing
                    age: 22,
@@ -132,11 +136,20 @@ var patient = { demographics:
                     other: []
                   },
                     vitals: {
-                      weight: 50,
-                      temperature: 100
+                      weight: 0,
+                      temperature: 0
                     },
-                  centorScore: []
-};
+                  centorScore: [],
+                  testing: {rst: null},
+                  pe : { provisionalDiagnosis: "",
+                         diagnosisDescription: "",
+                         symptomsObserved: [],
+                         symptomsNotObserved: [] },
+                  recommendations : { treatmentDecision: "",
+                                       treatmentReason: "",
+                                       cultureDecision: "",
+                                       cultureReason: "" }
+  };
 
 function set(data) {
   patient = data;

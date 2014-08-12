@@ -10,8 +10,7 @@
       <fs-input as="text" name="demographics.employeeID" required="" label="Walsmart Employee ID"></fs-input>
       <fs-input as="text" name="demographics.firstName" required="" label="First Name"></fs-input>
       <fs-input as="text" name="demographics.lastName" required="" label="Last Name"></fs-input>
-      <fs-input as="fs-radio" name="demographics.sex" label="Sex" items="sex"></fs-input>
-
+      <fs-input as="fs-radio" name="demographics.sex" label="Sex" items="sex">{{item}}</fs-input>
       <div class="form-group">
       <div class="col-xs-5 col-xs-offset-1">
         <fs-input as="fs-date" ng-model-onblur ng-change='calcAge()' name="demographics.dateOfBirth" required="" label="DOB"></fs-input>
@@ -44,16 +43,10 @@
       </div>
       
   </fs-form-for>
-
-  <!--form name="sexForm" >
-  <input type="radio" ng-change="showSex()" ng-model="patient.demographics.sex" value="M">  Male <br/>
-  <input type="radio" ng-change="showSex()" ng-model="patient.demographics.sex" value="F"> Female <br/>
-  </form-->
-  
   
   </div>
 </div>
 
-  <p><a class="btn btn-lg btn-success" ng-href="#/chiefcompl">Verify<span class="glyphicon"></span><a>
+  <p><a class="btn btn-lg btn-success" ng-href="#/chiefcompl">Verify<span class="glyphicon"></span>
   <a class="btn btn-lg" ng-href="#/chiefcompl">Cancel<span class="glyphicon"></span></a></p>
 

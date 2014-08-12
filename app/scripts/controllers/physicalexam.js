@@ -17,12 +17,10 @@ angular.module('throatApp')
   this.HPI = Data.get().HPI;
 
   this.vitals = Data.get().vitals;
-  this.rst = {id: "none", label: "None"};
+  this.testing = Data.get().testing;
   this.centorScore = Data.get().centorScore;
-  this.diagnosisSelection = "";
-
-  this.checkRSTNecessity = { rstDecision: "", rstReason: "", rstDisabled: false};
-  this.culture = { cultureDecision: "", cultureReason: ""};
+  this.pe = Data.get().pe;
+  this.recommendations = Data.get().recommendations;
 
   $scope.centorScoreList = [
   'Tonsillar exudates',
@@ -40,13 +38,8 @@ angular.module('throatApp')
 
   $scope.typicalSymptomsList = [];
   $scope.notTypicalSymptomsList = [];  
-  this.diagnosisDescription = "";
 
-  $scope.rstList = [
-    {id: 'none', label: 'None'},
-    {id: 'pos', label: 'Positive'},
-    {id: 'neg', label: 'Negative'}
-  ];
+  $scope.rstList = ['Positive', 'Negative', 'Do not perform'];
 
   this.checkRSTNecessity = function() {
     var checkRSTDisabled = false;
@@ -55,17 +48,19 @@ angular.module('throatApp')
 
     //disable RST if patient takes antibiotics currently
     if ($.inArray("Patient takes antibiotics currently", this.currentMeds.currentMedicationChecks) != -1) {
+      this.testing.rst = "Do not perform";
       checkRSTDisabled = true;
       checkRSTDecision = "Do not perform RST. ";
       checkRSTReason = "Patient is taking antibiotics, this may result in a false negative. ";
-    }
-    if (this.demographics.age < 15) {
-      checkRSTDecision = "Perform RST. ";
-      checkRSTReason = "It should be used as a first-line diagnostic test in all pediatric patients. ";
-    }
-    if ((this.demographics.age >= 15) && (this.centorScore.length > 1)){
-      checkRSTDecision = "Perform RST. ";
-      checkRSTReason = "A score of 2 or more is suggestive of a GABHS infection and should have an RST performed. ";
+    } else {
+      if (this.demographics.age < 15) {
+        checkRSTDecision = "Perform RST. ";
+        checkRSTReason = "It should be used as a first-line diagnostic test in all pediatric patients. ";
+      }
+      if ((this.demographics.age >= 15) && (this.centorScore.length > 1)){
+        checkRSTDecision = "Perform RST. ";
+        checkRSTReason = "A score of 2 or more is suggestive of a GABHS infection and should have an RST performed. ";
+      }
     }
 
     return { rstDecision: checkRSTDecision, rstReason: checkRSTReason, rstDisabled: checkRSTDisabled};
@@ -87,23 +82,23 @@ angular.module('throatApp')
     var cultDecision = "";
     var cultReason = "";
 
-    if ((this.rst.id == 'neg') && (this.demographics.age < 15)) {
+    if ((this.testing.rst == 'Negative') && (this.demographics.age < 15)) {
       cultDecision = "Perform a throat culture.";
       cultReason = "Pediatric patient.";
     }
-    if ((this.rst.id == 'neg') && (this.demographics.age > 15) 
+    if ((this.testing.rst == 'Negative') && (this.demographics.age > 15) 
       && (this.centorScore.length >= 2)) {      
       cultDecision = "Perform a throat culture.";
       cultReason = "Adult patient with Centor Score > 2. ";
     }
-    if ((this.rst.id == 'neg') && (this.demographics.age > 15) 
+    if ((this.testing.rst == 'Negative') && (this.demographics.age > 15) 
       && ($.inArray("lives with children", this.familyHistory) != -1)) {
       if (cultDecision == "") {
         cultDecision = "Perform a throat culture.";
       }
       cultReason += "Patient lives with children. ";
     }
-    if ((this.rst.id == 'neg') && (this.demographics.age > 15) 
+    if ((this.testing.rst == 'Negative') && (this.demographics.age > 15) 
       && ($.inArray("History of Rheumatic Heart Disease", this.HPI.historyOfPresentIllness) != -1)){
       if (cultDecision == "") {
         cultDecision = "Perform a throat culture.";
@@ -111,8 +106,8 @@ angular.module('throatApp')
       cultReason += "Patient has a personal history of rheumatic heart disease. ";
     }
 
-    if ((cultDecision == "") && (this.rst.id != 'none')) {
-      cultReason = "No indication to perform a throat culture per documentation. ";
+    if ((cultDecision == "") && (this.testing.rst != null)) {
+      cultReason = "Per documentation no indication to perform a throat culture. ";
     }
 
     return { cultureDecision: cultDecision, cultureReason: cultReason};
@@ -140,16 +135,20 @@ angular.module('throatApp')
       txReason += "Patient has a personal history of rheumatic heart disease. ";
     }
 
-    if (this.rst.id == 'pos') {
+    if (this.testing.rst == 'Positive') {
       txDecision = "Treat the patient for GABHS. ";
       txReason = "Positive RST result. ";
+    }
+
+    if ((txDecision == "") && (this.testing.rst != null)) {
+      txReason = "Per documentation no indication to perform GABHS treatment. ";
     }
     
     return { treatmentDecision: txDecision, treatmentReason: txReason};
   }
 
   this.loadSymptoms = function() {
-    switch (this.diagnosisSelection) {
+    switch (this.pe.provisionalDiagnosis) {
       case 'Bacterial Pharyngitis (GABHS)':
         $scope.typicalSymptomsList = ["sore throat",
                                       "abrupt onset of fever",
@@ -162,17 +161,17 @@ angular.module('throatApp')
                                       "skin rash (scarlatiniform rash)"];
         $scope.notTypicalSymptomsList = ["cough",
                                         "significant rhinorrhea"];  
-        this.diagnosisDescription = "GABHS accounts for 15% to 30% of all cases of pharyngitis in children between the ages of 5 and 15 and up to 30% in adults. The incidence peaks in the winter and early spring because of favorable transmission conditions";
+        this.pe.diagnosisDescription = "GABHS accounts for 15% to 30% of all cases of pharyngitis in children between the ages of 5 and 15 and up to 30% in adults. The incidence peaks in the winter and early spring because of favorable transmission conditions";
         break;
       case 'Viral Pharyngitis':
         $scope.typicalSymptomsList = ["sore throat"];
         $scope.notTypicalSymptomsList = [];  
-        this.diagnosisDescription = "Rhinovirus is responsible for nearly 20% of pharyngitis cases.";
+        this.pe.diagnosisDescription = "Rhinovirus is responsible for nearly 20% of pharyngitis cases.";
         break;
       case 'Laryngitis':
         $scope.typicalSymptomsList = ["hoarseness"];
         $scope.notTypicalSymptomsList = [];  
-        this.diagnosisDescription = "Laryngitis is caused by swelling and inflammation of the larynx (voice box). It is most common in individuals aged 18 to 40 years.";
+        this.pe.diagnosisDescription = "Laryngitis is caused by swelling and inflammation of the larynx (voice box). It is most common in individuals aged 18 to 40 years.";
         break;
       case 'Mononucleosis':
         $scope.typicalSymptomsList = ["sore throat",
@@ -181,15 +180,21 @@ angular.module('throatApp')
                                       "fatigue",
                                       "general malaise"];
         $scope.notTypicalSymptomsList = [];  
-        this.diagnosisDescription = "Mononucleosis (“mono”) is a viral infection most commonly caused by the Epstein–Barr virus and affects all age groups, although it is more prevalent in those aged 15 to 17 years";
+        this.pe.diagnosisDescription = "Mononucleosis (“mono”) is a viral infection most commonly caused by the Epstein–Barr virus and affects all age groups, although it is more prevalent in those aged 15 to 17 years";
         break;
       case 'Upper Respiratory Infections':
-        $scope.typicalSymptomsList = [];
+        $scope.typicalSymptomsList = ["fever",
+                                      "increased nasal drainage",
+                                      "cough",
+                                      "sore throat",
+                                      "swelling"];
         $scope.notTypicalSymptomsList = [];  
+        this.pe.diagnosisDescription = "";
         break;
       default:
         $scope.typicalSymptomsList = [];
         $scope.notTypicalSymptomsList = [];  
+        this.pe.diagnosisDescription = "";
         break;
     }
   }

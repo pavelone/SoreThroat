@@ -20,7 +20,7 @@
             <fs-input as="text" name="vitals.weight" label="Weight"></fs-input>
           </div>
           <div class="col-xs-6">
-            lbs &nbsp; {{ patient.vitals.weight/2.20462262 | number:1 }} kg
+            lbs {{ patient.vitals.weight/2.20462262 | number:1 }} kg
           </div>
         </div>
         <div class="form-group">
@@ -46,7 +46,8 @@
 
       <div class="form-group">
         <div class="col-xs-6">
-          <fs-input as="fs-radio" name="rst" label="RST" items="rstList" ng-disabled="patient.checkRSTNecessity().rstDisabled"></fs-input>
+          <!--fs-input as="fs-radio" name="rst" label="RST" items="rstList" ng-disabled="patient.checkRSTNecessity().rstDisabled"></fs-input-->
+          <fs-input as="fs-select" ng-disabled="patient.checkRSTNecessity().rstDisabled" name="testing.rst" items="rstList" label="RST">{{item}}</fs-input>
         </div>
         <div class="col-xs-6">
           <!--strong>{{"Recommendations:"}}</strong-->
@@ -62,14 +63,14 @@
       <strong>{{patient.checkTreatment().treatmentDecision}}</strong> <em>{{patient.checkTreatment().treatmentReason}}</em><p>
 
       <legend>Symptoms</legend>
-      <fs-input as="fs-select" ng-change="patient.loadSymptoms()" name="diagnosisSelection"items="diffDiagnosisList" label="Differential Diagnosis">{{item}}</fs-input>
-      <em>{{patient.diagnosisDescription}}</em>
+      <fs-input as="fs-select" ng-change="patient.loadSymptoms()" name="pe.provisionalDiagnosis"items="diffDiagnosisList" label="Provisional Diagnosis">{{item}}</fs-input>
+      <em>{{patient.pe.diagnosisDescription}}</em>
       <div class="form-group">
         <div class="col-xs-6">
-          <fs-input as="fs-multiselect" name="symptomsObserved" freetext="" label="Symptoms observed" items="typicalSymptomsList">{{ item }}</fs-input>
+          <fs-input as="fs-multiselect" name="pe.symptomsObserved" freetext="" label="Symptoms observed" items="typicalSymptomsList">{{ item }}</fs-input>
         </div>
         <div class="col-xs-6">
-          <fs-input as="fs-multiselect" name="symptomsNotObserved" freetext="" label="Symptoms not observed" items="notTypicalSymptomsList">{{ item }}</fs-input>
+          <fs-input as="fs-multiselect" name="pe.symptomsNotObserved" freetext="" label="Symptoms not observed" items="notTypicalSymptomsList">{{ item }}</fs-input>
         </div>
       </div>
 
@@ -77,7 +78,7 @@
   </fs-form-for>
 
   <p>
-  <a class="btn btn-lg btn-info" ng-href="#/physicalexam">Treatment<span class="glyphicon"></span></a>
+  <a class="btn btn-lg btn-info" ng-href="#/treatment" ng-click"patient.updateRecommendations()">Treatment<span class="glyphicon"></span></a>
   <a class="btn btn-lg" ng-href="#/demographics">Cancel<span class="glyphicon"></span></a></p>
 
   

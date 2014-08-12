@@ -13,11 +13,11 @@ angular.module('throatApp')
   .controller('PatientCtrl', function ($scope, Data) {
 
 	this.demographics = Data.get().demographics;
+	$scope.thisPatient = this;
 
-	$scope.sex = [
-	    {id: 'M', label: 'Male'},
-	    {id: 'F', label: 'Female'},
-  	];
+	$scope.sex = ['Male','Female'];
+
+  	//$scope.sex = ['Male','Female'];
 
 	  $scope.states = [
 	    'California',
