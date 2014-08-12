@@ -8,7 +8,38 @@
   <fs-form-for model="patient">
     <fieldset class="form-horizontal">
 
+      <legend>Laboratory tests</legend>
       <fs-input as="fs-multiselect" name="workingDiagnosis" freetext="" label="Working Diagnosis" items="diffDiagnosisList">{{ item }}</fs-input>
+
+      <div ng-show="patient.isGABHS()">
+      <legend>First Line Treatment</legend>
+
+      <!--Oral penicillin V is the treatment of choice, owing to its proven efficacy, safety, narrow spectrum, and low cost (Pichichero, 2012). Recommended dosing for children is 2 to 50 mg/kg/d four times a day for 10 days and 500 mg two to three times daily for 10 days for adults (“Antibiotics for Strep Throat [Streptococcal Pharyngitis],” 2011). Amoxicillin is often used in place of penicillin V, especially in children, because it is more palatable (Pichichero, 2012). Amoxicillin dosing is 40 mg/kg/d three times a day for 10 days for children and 500 mg three times a day for 10 days for adults (“Antibiotics for Strep Throat,” 2011). Intramuscular penicillin G and bicillin are also appropriate for those patients who cannot complete a 10-day course of oral antibiotics or who have a personal history of rheumatic heart disease (Pichichero, 2012).
+      -->
+
+      <fs-input as="fs-checkbox" name="treatment.firstLine" label="Select prescription" items="firstLineList">{{ item }}</fs-input>
+      
+      <legend>Second-Line and Recurrent Treatment</legend>
+      <!--Azithromycin and first-generation cephalosporins are also acceptable as therapy in treatment failure with penicillin or amoxicillin or with β-lactam sensitivity (Pichichero, 2012). Common dosing for second-line therapies is as follows:
+      Augmentin
+      Children—40 mg/kg/d two to three times daily for 10 days
+      Adults—500 to 875 mg twice a day for 10 days
+           Erythromycin
+      Children—40 mg/kg/d two to four times daily for 10 days
+      Adults—400 mg four times a day for 10 days
+           Azithromycin
+      Children—12 mg/kg every day for 5 days or 20 mg/kg every day for 3 days
+      Adults—500 mg on day 1 then 250 mg on days 2 to 5
+           Cephalexin
+      Children—25 to 50 mg/kg/d two to four times daily for 10 days
+      Adults—500 mg twice a day for 10 days (“Antibiotics for Strep Throat,” 2011)
+
+      For patients with recurrent strep, multiple antibiotic allergies or intolerance, or history of PTA, a referral for tonsillectomy may be considered. Criteria for consideration include seven or more episodes in the past year, five or more episodes per year in the past 2 years, or three or more episodes per year in the past 3 years, with at least one of the following with each episode: fever greater than 100.9°F, cervical adenopathy, tonsillar exudate, or positive strep test (“Streptococcal Pharyngitis,” 2012).-->
+
+      <fs-input as="fs-checkbox" name="treatment.secondLine" label="Select prescription" items="secondLineList">{{ item }}</fs-input>
+
+       <legend>Referring for tonsillectomy</legend>
+      </div>
 
     </fieldset>
   </fs-form-for>

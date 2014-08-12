@@ -150,7 +150,8 @@ var patient = { demographics:
                                        treatmentReason: "",
                                        cultureDecision: "",
                                        cultureReason: "" },
-                  workingDiagnosis : []
+                  workingDiagnosis : [],
+                  treatment : {}
   };
 
 function set(data) {
