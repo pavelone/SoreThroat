@@ -4,8 +4,11 @@
 
   <h2>Treatment</h2>
   <em>Age: {{patient.demographics.age}}, weight: {{patient.vitals.weight}} lbs, temperature: {{patient.vitals.temperature}} ℉, provisional diagnosis: {{patient.pe.provisionalDiagnosis}}, observed symptoms: <span ng-repeat="item in patient.pe.symptomsObserved">{{item}}, </span>not observed symptoms: <span ng-repeat="item in patient.pe.symptomsNotObserved">{{item}}, </span>Centor score: {{patient.centorScore.length}}, RST: {{patient.testing.rst}}, {{patient.recommendations.cultureDecision}}, {{patient.recommendations.cultureReason}}, {{patient.recommendations.treatmentDecision}}, {{patient.recommendations.treatmentReason}}.</em>
+  <p></p>
   <fs-form-for model="patient">
     <fieldset class="form-horizontal">
+
+      <fs-input as="fs-multiselect" name="workingDiagnosis" freetext="" label="Working Diagnosis" items="diffDiagnosisList">{{ item }}</fs-input>
 
     </fieldset>
   </fs-form-for>

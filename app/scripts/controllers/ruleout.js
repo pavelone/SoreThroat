@@ -30,17 +30,10 @@ angular.module('throatApp')
   ];
 
   $scope.emergentDiagnosesList = [
-  'Epiglottitis',
-  'Peritonsillar abscess',
-  'Retropharyngeal abscess',
-  'none of the above'
-  ];
-
-  $scope.emergentDiagnosesEducation = [
-  'http://www.nlm.nih.gov/medlineplus/ency/article/000605.htm',
-  'http://www.nlm.nih.gov/medlineplus/ency/article/000986.htm',
-  'http://www.nlm.nih.gov/medlineplus/ency/article/000984.htm',
-  ''
+  {diag: 'Epiglottitis', edu: 'http://www.nlm.nih.gov/medlineplus/ency/article/000605.htm'},
+  {diag: 'Peritonsillar abscess', edu: 'http://www.nlm.nih.gov/medlineplus/ency/article/000986.htm'},
+  {diag: 'Retropharyngeal abscess', edu: 'http://www.nlm.nih.gov/medlineplus/ency/article/000984.htm'},
+  {diag: 'none of the above', edu: 'http://google.com'}
   ];
 
   $scope.otherSymptomsList = [

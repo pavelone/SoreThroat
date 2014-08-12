@@ -13,12 +13,19 @@ angular.module('throatApp')
   this.demographics = Data.get().demographics;
   this.chiefComplaint = Data.get().chiefComplaint[0];
   this.currentMeds =  Data.get().currentMeds;
-
   this.vitals = Data.get().vitals;
   this.testing = Data.get().testing;
   this.centorScore = Data.get().centorScore;
   this.pe = Data.get().pe;
   this.recommendations = Data.get().recommendations;
+  this.workingDiagnosis = Data.get().workingDiagnosis;
+
+  $scope.diffDiagnosisList = [
+    'Bacterial Pharyngitis (GABHS)',
+    'Viral Pharyngitis',
+    'Laryngitis',
+    'Mononucleosis',
+    'Upper Respiratory Infections'];
 
 
 

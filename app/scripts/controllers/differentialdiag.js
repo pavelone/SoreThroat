@@ -20,103 +20,53 @@ angular.module('throatApp')
   this.buttonLabel = "Show Other";
 
   $scope.emergentDiagnosesList = [
-  'Epiglottitis',
-  'Peritonsillar abscess',
-  'Retropharyngeal abscess',
-  'none of the above'
+  {diag: 'Epiglottitis', edu: 'http://www.nlm.nih.gov/medlineplus/ency/article/000605.htm'},
+  {diag: 'Peritonsillar abscess', edu: 'http://www.nlm.nih.gov/medlineplus/ency/article/000986.htm'},
+  {diag: 'Retropharyngeal abscess', edu: 'http://www.nlm.nih.gov/medlineplus/ency/article/000984.htm'},
+  {diag: 'none of the above', edu: 'http://google.com'}
   ];
 
   $scope.bacterialPharyngitisCausesList = [
-  'GABHS',
-  'Mycoplasma pneumonia (5% to 16% of cases of pharyngitis in children older than age 6)',
-  'Neisseria gonorrhoeae (ask about sexual history)',
-  'non-Group A streptococci (Group C and G)',
-  'Corynebacterium diphtheriae (hallmarked by the formation of a tightly adhering gray membrane that bleeds when dislodged)',
-  'none of the above'
+  {diag: 'GABHS', edu: 'http://www.niaid.nih.gov/topics/strep/Pages/Default.aspx'},
+  {diag: 'Mycoplasma pneumonia (5% to 16% of cases of pharyngitis in children older than age 6)', edu: 'http://www.nlm.nih.gov/medlineplus/ency/article/000082.htm'},
+  {diag: 'Neisseria gonorrhoeae (ask about sexual history)', edu: 'http://www.nlm.nih.gov/medlineplus/gonorrhea.html'},
+  {diag: 'non-Group A streptococci (Group C and G)', edu: 'http://google.com'},
+  {diag: 'Corynebacterium diphtheriae (hallmarked by the formation of a tightly adhering gray membrane that bleeds when dislodged)', edu: 'http://www.nlm.nih.gov/medlineplus/ency/article/001608.htm'},
+  {diag: 'none of the above', edu: 'http://google.com'}
   ];
 
   $scope.otherBacterialPathogensList = [
-  'Staphylococcus aureus',
-  'Haemophilus influenzae',
-  'Moraxella catarrhalis',
-  'Bacteroides fragilis',
-  'Bacteroides oralis',
-  'Bacteroides melaninogenicus',
-  'Fusobacterium species',
-  'Peptostreptococcus species',
-  'Chlamydia trachomatis',
-  'none of the above'
+  {diag: 'Staphylococcus aureus', edu: 'http://google.com'},
+  {diag: 'Haemophilus influenzae', edu: 'http://google.com'},
+  {diag: 'Moraxella catarrhalis', edu: 'http://google.com'},
+  {diag: 'Bacteroides fragilis', edu: 'http://google.com'},
+  {diag: 'Bacteroides oralis', edu: 'http://google.com'},
+  {diag: 'Bacteroides melaninogenicus', edu: 'http://google.com'},
+  {diag: 'Fusobacterium species', edu: 'http://google.com'},
+  {diag: 'Peptostreptococcus species', edu: 'http://google.com'},
+  {diag: 'Chlamydia trachomatis', edu: 'http://google.com'},
+  {diag: 'none of the above', edu: 'http://google.com'}
   ];
 
   $scope.viralCausesList = [
-  'Viral pharyngitis (Rhinovirus, nearly 20% of pharyngitis cases or Adenovirus)',
-  'Laryngitis',
-  'Mononucleosis',
-  'Upper Respiratory Infections',
-  'none of the above'
+  {diag: 'Viral pharyngitis (Rhinovirus, nearly 20% of pharyngitis cases or Adenovirus)', edu: 'http://www.nlm.nih.gov/medlineplus/ency/article/001392.htm'},
+  {diag: 'Laryngitis', edu: 'http://google.com'},
+  {diag: 'Mononucleosis', edu: 'http://www.nlm.nih.gov/medlineplus/infectiousmononucleosis.html'},
+  {diag: 'Upper Respiratory Infections', edu: 'http://google.com'},
+  {diag: 'none of the above', edu: 'http://google.com'}
   ];
 
   $scope.otherViralCausesList = [
-  'Epstein–Barr virus',
-  'cytomegalovirus',
-  'herpes simplex virus',
-  'respiratory syncytial virus',
-  'HIV',
-  'parainfluenza',
-  'influenza',
-  'enterovirus',
-  'coronavirus',
-  'none of the above'
-  ];
-
-  $scope.emergentDiagnosesEducation = [
-  'http://www.nlm.nih.gov/medlineplus/ency/article/000605.htm',
-  'http://www.nlm.nih.gov/medlineplus/ency/article/000986.htm',
-  'http://www.nlm.nih.gov/medlineplus/ency/article/000984.htm',
-  ''
-  ];
-
-  $scope.bacterialPharyngitisCausesEducation = [
-  'http://www.niaid.nih.gov/topics/strep/Pages/Default.aspx',
-  'http://www.nlm.nih.gov/medlineplus/ency/article/000082.htm',
-  'http://www.nlm.nih.gov/medlineplus/gonorrhea.html',
-  'http://google.com',
-  'http://www.nlm.nih.gov/medlineplus/ency/article/001608.htm',
-  'http://google.com'
-  ];
-
-  $scope.viralCausesEducation = [
-  'http://www.nlm.nih.gov/medlineplus/ency/article/001392.htm',
-  'http://google.com',
-  'http://www.nlm.nih.gov/medlineplus/infectiousmononucleosis.html',
-  'http://google.com',
-  'http://google.com'
-  ];
-
-  $scope.otherBacterialPathogenEducation = [
-  'http://google.com',
-  'http://google.com',
-  'http://google.com',
-  'http://google.com',
-  'http://google.com',
-  'http://google.com',
-  'http://google.com',
-  'http://google.com',
-  'http://google.com',
-  'http://google.com'
-  ];
-
-  $scope.otherViralCausesEducation = [
-  'http://google.com',
-  'http://google.com',
-  'http://google.com',
-  'http://google.com',
-  'http://google.com',
-  'http://google.com',
-  'http://google.com',
-  'http://google.com',
-  'http://google.com',
-  'http://google.com'
+  {diag: 'Epstein–Barr virus', edu: 'http://google.com'},
+  {diag: 'cytomegalovirus', edu: 'http://google.com'},
+  {diag: 'herpes simplex virus', edu: 'http://google.com'},
+  {diag: 'respiratory syncytial virus', edu: 'http://google.com'},
+  {diag: 'HIV', edu: 'http://google.com'},
+  {diag: 'parainfluenza', edu: 'http://google.com'},
+  {diag: 'influenza', edu: 'http://google.com'},
+  {diag: 'enterovirus', edu: 'http://google.com'},
+  {diag: 'coronavirus', edu: 'http://google.com'},
+  {diag: 'none of the above', edu: 'http://google.com'}
   ];
 
 
