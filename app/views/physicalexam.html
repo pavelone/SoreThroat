@@ -61,6 +61,18 @@
 
       <strong>{{patient.checkTreatment().treatmentDecision}}</strong> <em>{{patient.checkTreatment().treatmentReason}}</em><p>
 
+      <legend>Symptoms</legend>
+      <fs-input as="fs-select" ng-change="patient.loadSymptoms()" name="diagnosisSelection"items="diffDiagnosisList" label="Differential Diagnosis">{{item}}</fs-input>
+      <em>{{patient.diagnosisDescription}}</em>
+      <div class="form-group">
+        <div class="col-xs-6">
+          <fs-input as="fs-multiselect" name="symptomsObserved" freetext="" label="Symptoms observed" items="typicalSymptomsList">{{ item }}</fs-input>
+        </div>
+        <div class="col-xs-6">
+          <fs-input as="fs-multiselect" name="symptomsNotObserved" freetext="" label="Symptoms not observed" items="notTypicalSymptomsList">{{ item }}</fs-input>
+        </div>
+      </div>
+
     </fieldset>
   </fs-form-for>
 

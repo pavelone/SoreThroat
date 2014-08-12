@@ -19,6 +19,7 @@ angular.module('throatApp')
   this.vitals = Data.get().vitals;
   this.rst = {id: "none", label: "None"};
   this.centorScore = Data.get().centorScore;
+  this.diagnosisSelection = "";
 
   this.checkRSTNecessity = { rstDecision: "", rstReason: "", rstDisabled: false};
   this.culture = { cultureDecision: "", cultureReason: ""};
@@ -29,6 +30,17 @@ angular.module('throatApp')
   'Presence of a fever (T > 38°C, 100.4°F)',
   'Absence of a cough'
   ];
+
+  $scope.diffDiagnosisList = [
+    'Bacterial Pharyngitis (GABHS)',
+    'Viral Pharyngitis',
+    'Laryngitis',
+    'Mononucleosis',
+    'Upper Respiratory Infections'];
+
+  $scope.typicalSymptomsList = [];
+  $scope.notTypicalSymptomsList = [];  
+  this.diagnosisDescription = "";
 
   $scope.rstList = [
     {id: 'none', label: 'None'},
@@ -128,15 +140,58 @@ angular.module('throatApp')
       txReason += "Patient has a personal history of rheumatic heart disease. ";
     }
 
-
     if (this.rst.id == 'pos') {
       txDecision = "Treat the patient for GABHS. ";
       txReason = "Positive RST result. ";
     }
     
-
-
     return { treatmentDecision: txDecision, treatmentReason: txReason};
+  }
+
+  this.loadSymptoms = function() {
+    switch (this.diagnosisSelection) {
+      case 'Bacterial Pharyngitis (GABHS)':
+        $scope.typicalSymptomsList = ["sore throat",
+                                      "abrupt onset of fever",
+                                      "headache",
+                                      "abdominal pain",
+                                      "nausea",
+                                      "vomiting",
+                                      "enlarged tender anterior cervical lymph nodes",
+                                      "erythematous uvula with tonsillar exudate",
+                                      "skin rash (scarlatiniform rash)"];
+        $scope.notTypicalSymptomsList = ["cough",
+                                        "significant rhinorrhea"];  
+        this.diagnosisDescription = "GABHS accounts for 15% to 30% of all cases of pharyngitis in children between the ages of 5 and 15 and up to 30% in adults. The incidence peaks in the winter and early spring because of favorable transmission conditions";
+        break;
+      case 'Viral Pharyngitis':
+        $scope.typicalSymptomsList = ["sore throat"];
+        $scope.notTypicalSymptomsList = [];  
+        this.diagnosisDescription = "Rhinovirus is responsible for nearly 20% of pharyngitis cases.";
+        break;
+      case 'Laryngitis':
+        $scope.typicalSymptomsList = ["hoarseness"];
+        $scope.notTypicalSymptomsList = [];  
+        this.diagnosisDescription = "Laryngitis is caused by swelling and inflammation of the larynx (voice box). It is most common in individuals aged 18 to 40 years.";
+        break;
+      case 'Mononucleosis':
+        $scope.typicalSymptomsList = ["sore throat",
+                                      "fever",
+                                      "swollen lymph nodes",
+                                      "fatigue",
+                                      "general malaise"];
+        $scope.notTypicalSymptomsList = [];  
+        this.diagnosisDescription = "Mononucleosis (“mono”) is a viral infection most commonly caused by the Epstein–Barr virus and affects all age groups, although it is more prevalent in those aged 15 to 17 years";
+        break;
+      case 'Upper Respiratory Infections':
+        $scope.typicalSymptomsList = [];
+        $scope.notTypicalSymptomsList = [];  
+        break;
+      default:
+        $scope.typicalSymptomsList = [];
+        $scope.notTypicalSymptomsList = [];  
+        break;
+    }
   }
 
 });
