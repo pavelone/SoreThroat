@@ -38,26 +38,34 @@
           <fs-input as="fs-checkbox" name="centorScore" label="Centor Score" items="centorScoreList">{{ item }}</fs-input>
         </div>
         <div class="col-xs-6">
-          <strong>{{"Score: "+patient.centorScore.length}}</strong>
+          <strong>{{"Score: "+patient.centorScore.length}}</strong> <em>{{patient.csConclusion}}</em><p>
         </div>
       </div>
       
-      <strong>{{patient.rstDecision}}</strong> <em>{{patient.rstReason}}</em><p>
+      <strong>{{patient.checkRSTNecessity().rstDecision}}</strong> <em>{{patient.checkRSTNecessity().rstReason}}</em><p>
 
       <div class="form-group">
         <div class="col-xs-6">
-          <fs-input as="fs-radio" name="pe.rst" label="RST" items="rstList" ng-disabled="patient.checkRSTNecessity()"></fs-input>
+          <fs-input as="fs-radio" name="rst" label="RST" items="rstList" ng-disabled="patient.checkRSTNecessity().rstDisabled"></fs-input>
         </div>
         <div class="col-xs-6">
           <strong>{{"Recommendations:"}}</strong>
         </div>
-      </div>  
+      </div>
+
+      <legend>Throat culture</legend>
+
+      <strong>{{patient.checkCulture().cultureDecision}}</strong> <em>{{patient.checkCulture().cultureReason}}</em><p>
+      <p>
+      <legend>Treatment recommendations</legend>
+
+      <strong>{{patient.checkTreatment().treatmentDecision}}</strong> <em>{{patient.checkTreatment().treatmentReason}}</em><p>
 
     </fieldset>
   </fs-form-for>
 
   <p>
-  <a class="btn btn-lg btn-info" ng-href="#/physicalexam">OK<span class="glyphicon"></span></a>
+  <a class="btn btn-lg btn-info" ng-href="#/physicalexam">Treatment<span class="glyphicon"></span></a>
   <a class="btn btn-lg" ng-href="#/demographics">Cancel<span class="glyphicon"></span></a></p>
 
   
