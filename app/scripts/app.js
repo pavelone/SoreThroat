@@ -99,6 +99,7 @@ var patient = { demographics:
                          episodes2ndYear: 0,
                          episodes3rdYear: 0 },
                   familyHistory: [],
+                  //not saved, maybe need to fix
                   familyHistoryComments: "",
                   currentMeds: {currentMedicationChecks: [],
                   currentMedications: []},
@@ -142,7 +143,7 @@ var patient = { demographics:
                   centorScore: [],
                   testing: {rst: null},
                   //temporary for testing
-                  pe : { provisionalDiagnosis: "Bacterial Pharyngitis (GABHS)",
+                  pe : { provisionalDiagnosis: "",
                          diagnosisDescription: "",
                          symptomsObserved: [],
                          symptomsNotObserved: [] },

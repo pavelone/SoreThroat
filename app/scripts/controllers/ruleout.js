@@ -18,15 +18,15 @@ angular.module('throatApp')
   this.otherSymptoms = Data.get().otherSymptoms;
   
   $scope.emergentSymptomsList = [
-  'labored breathing',
-  'inability to swallow or obvious drooling',
-  'swelling of the face or neck',
-  'inability to open the mouth',
-  'severe pain',
-  'asymmetrical swelling of the soft palate',
-  'unilateral swelling of the pharynx or tonsils',
-  'deviation of the uvula',
-  'none of the above'
+  {diag: 'labored breathing'},
+  {diag: 'inability to swallow or obvious drooling'},
+  {diag: 'swelling of the face or neck'},
+  {diag: 'inability to open the mouth'},
+  {diag: 'severe pain'},
+  {diag: 'asymmetrical swelling of the soft palate'},
+  {diag: 'unilateral swelling of the pharynx or tonsils'},
+  {diag: 'deviation of the uvula'},
+  {diag: 'none of the above'}
   ];
 
   $scope.emergentDiagnosesList = [
@@ -37,9 +37,9 @@ angular.module('throatApp')
   ];
 
   $scope.otherSymptomsList = [
-  'dehydrated patient',
-  'septic patient',
-  'none of the above'
+  {diag: 'dehydrated patient'},
+  {diag: 'septic patient'},
+  {diag: 'none of the above'}
   ];
 
   this.classRuleOut = "btn btn-lg btn-info";
@@ -51,7 +51,7 @@ angular.module('throatApp')
   function countGoodAndBad(whereArr, countValues) {
     switch (whereArr.length) {
       case 0: break;
-      case 1: if (whereArr[0] == "none of the above") {
+      case 1: if (whereArr[0].diag == "none of the above") {
         countValues['good']++;
       } else {
         countValues['bad']++;

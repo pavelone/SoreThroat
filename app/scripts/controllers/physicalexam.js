@@ -200,10 +200,11 @@ angular.module('throatApp')
   }
 
   this.updateRecommendations = function() {
+    this.recommendations.cultureDecision = this.checkCulture().cultureDecision;
+    this.recommendations.cultureReason = this.checkCulture().cultureReason
     this.recommendations.treatmentDecision = this.checkTreatment().treatmentDecision;
     this.recommendations.treatmentReason = this.checkTreatment().treatmentReason;
-    this.recommendations.cultureDecision = this.checkCulture().cultureDecision;
-    this.recommendations.cultureReason = this.checkCulture().cultureReason;
+    console.log(this.recommendations);
   }
 
   

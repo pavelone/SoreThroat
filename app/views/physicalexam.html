@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
           <div class="col-xs-6">
-            <fs-input as="text" ng-change="patient.updateCentorScore()" name="vitals.temperature" label="Tempe rature"></fs-input>
+            <fs-input as="text" name="vitals.temperature" label="Tempe rature"></fs-input>
           </div>
           <div class="col-xs-6">
             ℉ / {{ (patient.vitals.temperature - 32)* 5.0/9.0 | number:1 }} ℃
@@ -35,7 +35,7 @@
       <legend>Centor score & RST</legend>
       <div class="form-group">
         <div class="col-xs-6">
-          <fs-input as="fs-checkbox" ng-change="patient.updateTreatment()" name="centorScore" label="Centor Score" items="centorScoreList">{{ item }}</fs-input>
+          <fs-input as="fs-checkbox" ng-change="patient.updateRecommendations()" name="centorScore" label="Centor Score" items="centorScoreList">{{ item }}</fs-input>
         </div>
         <div class="col-xs-6">
           <strong>{{"Score: "+patient.centorScore.length}}</strong> <em>{{patient.csConclusion}}</em><p>
