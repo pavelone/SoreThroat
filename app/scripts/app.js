@@ -70,6 +70,13 @@ var throatApp = angular
       });
   });
 
+function HeaderController($scope, $location) 
+{ 
+    $scope.isActive = function (viewLocation) { 
+        return viewLocation === $location.path();
+    };
+}
+
 throatApp.factory('Data', function () {
 
 var patient = { demographics:
@@ -167,6 +174,6 @@ return {
 set: set,
 get: get
 };
-  
+
 });
  

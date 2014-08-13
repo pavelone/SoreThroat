@@ -24,19 +24,19 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
+    <div class="container" ng-controller="HeaderController">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Demographics</a></li>
-          <li><a ng-href="#/chiefcompl">CC</a></li>
-          <li><a ng-href="#/ruleout">Rule out</a></li>
-          <li><a ng-href="#/hpi">HPI</a></li>
-          <li><a ng-href="#/fhandsh">FH & SH</a></li>
-          <li><a ng-href="#/currentmeds">Meds</a></li>
-          <li><a ng-href="#/allergies">Allergies</a></li>
-          <li><a ng-href="#/differentialdiag">DD</a></li>
-          <li><a ng-href="#/physicalexam">PE</a></li>
-          <li><a ng-href="#/treatment">Treatment</a></li>
+          <li ng-class="{active: isActive('/')}"><a ng-href="#">Demographics</a></li>
+          <li ng-class="{active: isActive('/chiefcompl')}"><a ng-href="#/chiefcompl">CC</a></li>
+          <li ng-class="{active: isActive('/ruleout')}"><a ng-href="#/ruleout">Rule out</a></li>
+          <li ng-class="{active: isActive('/hpi')}"><a ng-href="#/hpi">HPI</a></li>
+          <li ng-class="{active: isActive('/fhandsh')}"><a ng-href="#/fhandsh">FH & SH</a></li>
+          <li ng-class="{active: isActive('/currentmeds')}"><a ng-href="#/currentmeds">Meds</a></li>
+          <li ng-class="{active: isActive('/allergies')}"><a ng-href="#/allergies">Allergies</a></li>
+          <li ng-class="{active: isActive('/differentialdiag')}"><a ng-href="#/differentialdiag">DD</a></li>
+          <li ng-class="{active: isActive('/physicalexam')}"><a ng-href="#/physicalexam">PE</a></li>
+          <li ng-class="{active: isActive('/treatment')}"><a ng-href="#/treatment">Treatment</a></li>
         </ul>
         <h3 class="text-muted">CCC</h3>
       </div>
