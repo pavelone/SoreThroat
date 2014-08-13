@@ -9,7 +9,7 @@
     <fieldset class="form-horizontal">
 
       <legend>Laboratory tests</legend>
-      <fs-input as="fs-multiselect" name="workingDiagnosis" freetext="" label="Working Diagnosis" items="diffDiagnosisList">{{ item }}</fs-input>
+      <fs-input as="fs-multiselect" name="treatment.workingDiagnosis" freetext="" label="Working Diagnosis" items="diffDiagnosisList">{{ item }}</fs-input>
 
       <fs-input as="fs-checkbox" name="treatment.labTests" label="Select laboratory tests" items="labTestList">{{ item }}</fs-input>
 
@@ -54,7 +54,7 @@
 
       <fs-input as="fs-multiselect" name="treatment.topicalTherapy" freetext="" label="Topical therapy" items="topicalTherapyList">{{ item }}</fs-input>
 
-      <fs-input as="fs-checkbox" name="treatment.Corticosteroids" label="Corticosteroids" items="corticosteroidsList">{{ item }}</fs-input>
+      <fs-input as="fs-checkbox" name="treatment.corticosteroids" label="Corticosteroids" items="corticosteroidsList">{{ item }}</fs-input>
 
     </fieldset>
   </fs-form-for>

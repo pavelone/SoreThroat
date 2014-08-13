@@ -18,7 +18,7 @@ angular.module('throatApp')
   this.centorScore = Data.get().centorScore;
   this.pe = Data.get().pe;
   this.recommendations = Data.get().recommendations;
-  this.workingDiagnosis = Data.get().workingDiagnosis;
+  this.treatment = Data.get().treatment;
 
   $scope.diffDiagnosisList = [
     'Bacterial Pharyngitis (GABHS)',
@@ -83,6 +83,6 @@ angular.module('throatApp')
     ];
 
 	this.isGABHS = function() {
-		return ($.inArray("Bacterial Pharyngitis (GABHS)", this.workingDiagnosis) != -1);
+		return ($.inArray("Bacterial Pharyngitis (GABHS)", this.treatment.workingDiagnosis) != -1);
 	}
 });

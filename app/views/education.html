@@ -1,0 +1,20 @@
+<div class="jumbotron" ng-controller="TreatmentCtrl as patient">
+
+  <h3>Chief Complaint for {{ patient.demographics.firstName+" "+patient.demographics.lastName+" is  "+patient.chiefComplaint }}</h3>
+
+  <h2>Aftercare instructions</h2>
+
+  <fs-form-for model="patient">
+    <fieldset class="form-horizontal">
+
+      <legend>Patient education</legend>
+
+    </fieldset>
+  </fs-form-for>
+  <p><textarea class="form-control" rows="10" ng-model="aftercare.notes"></textarea></p>
+
+  <p>
+  <a class="btn btn-lg btn-info" ng-href="#/education">Finalize documentation<span class="glyphicon"></span></a>
+  <a class="btn btn-lg" ng-href="#">Cancel<span class="glyphicon"></span></a></p>
+
+</div>

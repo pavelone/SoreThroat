@@ -65,6 +65,10 @@ var throatApp = angular
         templateUrl: 'views/treatment.html',
         controller: 'TreatmentCtrl'
       })
+      .when('/education', {
+        templateUrl: 'views/education.html',
+        controller: 'EducationCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -158,8 +162,14 @@ var patient = { demographics:
                                        treatmentReason: "",
                                        cultureDecision: "",
                                        cultureReason: "" },
-                  workingDiagnosis : [],
-                  treatment : {}
+                  treatment : { workingDiagnosis : [],
+                                labTests: [],
+                                firstLine: [],
+                                secondLine: [],
+                                systemicTherapy: [],
+                                topicalTherapy: [],
+                                corticosteroids: []},
+                  aftercare: { notes: "" }
   };
 
 function set(data) {

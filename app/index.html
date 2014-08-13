@@ -37,6 +37,7 @@
           <li ng-class="{active: isActive('/differentialdiag')}"><a ng-href="#/differentialdiag">DD</a></li>
           <li ng-class="{active: isActive('/physicalexam')}"><a ng-href="#/physicalexam">PE</a></li>
           <li ng-class="{active: isActive('/treatment')}"><a ng-href="#/treatment">Treatment</a></li>
+          <li ng-class="{active: isActive('/education')}"><a ng-href="#/education">Aftercare</a></li>
         </ul>
         <h3 class="text-muted">CCC</h3>
       </div>
@@ -44,7 +45,7 @@
       <div ng-view=""></div>
 
       <div class="footer">
-        <p>Choice-HS.com</p>
+        <p><a class="" target="_blank" href="http://choice-hs.com">Choice-HS.com<span class="glyphicon"></span></a></p>
       </div>
     </div>
 
@@ -96,6 +97,7 @@
         <script src="scripts/controllers/differentialdiag.js"></script>
         <script src="scripts/controllers/physicalexam.js"></script>
         <script src="scripts/controllers/treatment.js"></script>
+        <script src="scripts/controllers/education.js"></script>
         <!-- endbuild -->
 </body>
 </html>
