@@ -54,7 +54,7 @@ angular.module('throatApp')
 	  //adults
 	  $scope.firstLineList = [
 	  'Oral penicillin V 500 mg two to three times daily for 10 days',
-	  '500 mg three times a day for 10 days',
+	  'Amoxicillin 500 mg three times a day for 10 days',
 	  'Intramuscular penicillin G',
 	  'Bicillin'];
 
