@@ -1,4 +1,4 @@
-<div class="jumbotron" ng-controller="TreatmentCtrl as patient">
+<div class="jumbotron" ng-controller="EducationCtrl as patient">
 
   <h3>Chief Complaint for {{ patient.demographics.firstName+" "+patient.demographics.lastName+" is  "+patient.chiefComplaint }}</h3>
 
@@ -7,7 +7,24 @@
   <fs-form-for model="patient">
     <fieldset class="form-horizontal">
 
-      <legend>Patient education</legend>
+      <legend>Relevant patient education</legend>
+      
+      <fs-input as="fs-checkbox" name="education.workingDiagnosis" label="Working Diagnosis" items="diffDiagnosisList">{{ item.item }}<a href="{{item.edu}}" target="_blank"><img src="../images/information-icon.png" alt="info" width="16" height="16"></a></fs-input>
+
+      <fs-input as="fs-checkbox" name="education.labTests" label="Lab tests" items="labTestList">{{ item.item }}<a href="{{item.edu}}" target="_blank"><img src="../images/information-icon.png" alt="info" width="16" height="16"></a></fs-input>
+
+
+      <fs-input as="fs-checkbox" name="education.firstLine" label="First Line" items="firstLineList">{{ item.item }}<a href="{{item.edu}}" target="_blank"><img src="../images/information-icon.png" alt="info" width="16" height="16"></a></fs-input>
+      
+      <fs-input as="fs-checkbox" name="education.secondLine" label="Second Line" items="secondLineList">{{ item.item }}<a href="{{item.edu}}" target="_blank"><img src="../images/information-icon.png" alt="info" width="16" height="16"></a></fs-input>
+
+      <fs-input as="fs-checkbox" name="education.systemicTherapy" label="Systemic Therapy" items="systemicTherapyList">{{ item.item }}<a href="{{item.edu}}" target="_blank"><img src="../images/information-icon.png" alt="info" width="16" height="16"></a></fs-input>
+
+      <fs-input as="fs-checkbox" name="education.topicalTherapy" label="Topical Therapy" items="topicalTherapyList">{{ item.item }}<a href="{{item.edu}}" target="_blank"><img src="../images/information-icon.png" alt="info" width="16" height="16"></a></fs-input>
+      
+      <fs-input as="fs-checkbox" name="education.corticosteroids" label="Corticosteroids" items="corticosteroidsList">{{ item.item }}<a href="{{item.edu}}" target="_blank"><img src="../images/information-icon.png" alt="info" width="16" height="16"></a></fs-input>
+
+
 
     </fieldset>
   </fs-form-for>

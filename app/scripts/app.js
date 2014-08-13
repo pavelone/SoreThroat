@@ -169,7 +169,14 @@ var patient = { demographics:
                                 systemicTherapy: [],
                                 topicalTherapy: [],
                                 corticosteroids: []},
-                  aftercare: { notes: "" }
+                  aftercare: { notes: "",
+                               workingDiagnosis : [],
+                               labTests: [],
+                               firstLine: [],
+                               secondLine: [],
+                               systemicTherapy: [],
+                               topicalTherapy: [],
+                               corticosteroids: [] }
   };
 
 function set(data) {
