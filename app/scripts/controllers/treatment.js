@@ -27,7 +27,7 @@ angular.module('throatApp')
     'Mononucleosis',
     'Upper Respiratory Infections'];
 
-   $scope.labTestList = [
+  $scope.labTestList = [
     'Throat culture',
     'Monospot test (for Mononucleosis)'];
 
@@ -50,6 +50,8 @@ angular.module('throatApp')
 	  'Acetaminophen 10-15 mg/kg PO q4-6h prn',
 	  'Avoid aspirin and salicylates'];
 
+	  this.allergyWarning = "Amoxicillin dosing is 40 mg/kg/d three times a day for 10 days; Amoxicillin 40 mg/kg/d contains Amoxicillin Trihydrate, which is closely related to the ingredient Amoxicillin. This patient's profile indicates Amoxicillin as an allergen. Amoxicillin 40 mg/kg/d poses the risk of causing an ingredient-based allergic reaction in this patient.";
+
 	} else {
 	  //adults
 	  $scope.firstLineList = [
@@ -67,6 +69,8 @@ angular.module('throatApp')
 	  $scope.systemicTherapyList = [
 	  'Ibuprofen 400 mg',
 	  'Acetaminophen 1,000 mg'];
+
+	  this.allergyWarning = "Amoxicillin 500 mg three times a day for 10 days; Amoxicillin 500 mg contains Amoxicillin Trihydrate, which is closely related to the ingredient Amoxicillin. This patient's profile indicates Amoxicillin as an allergen. Amoxicillin 500 mg poses the risk of causing an ingredient-based allergic reaction in this patient.";
 	}
 
 	$scope.topicalTherapyList = [
@@ -84,5 +88,10 @@ angular.module('throatApp')
 
 	this.isGABHS = function() {
 		return ($.inArray("Bacterial Pharyngitis (GABHS)", this.treatment.workingDiagnosis) != -1);
+	}
+
+	this.isAmoxicillin = function() {
+		return ($.inArray("Amoxicillin dosing is 40 mg/kg/d three times a day for 10 days", this.treatment.firstLine) != -1)
+		|| ($.inArray("Amoxicillin 500 mg three times a day for 10 days", this.treatment.firstLine) != -1);
 	}
 });
