@@ -42,6 +42,17 @@
         <h3 class="text-muted"><img class="walmartLogo" alt="Walmart. Save Money. Live Better." src="../images/logo-header.png"></h3>
       </div>
 
+      <div class="patient-badge" ng-controller="PatientCtrl as patient">
+        <img class="patientPhoto" alt="No photo." src="../images/no_photo_report.png">
+        <h3 class="text-muted" ng-controller="HeaderController">{{pageName()}}</h3>
+        <strong ng-show="patient.demographics.firstName">Name: </strong><em ng-show="patient.demographics.firstName">{{patient.demographics.firstName+" "+patient.demographics.lastName+" "}}</em>
+        <strong ng-show="patient.demographics.sex">Sex: </strong><em ng-show="patient.demographics.sex">{{patient.demographics.sex+" "}}</em>
+        <strong ng-show="patient.demographics.age">Age: </strong><em ng-show="patient.demographics.age">{{patient.demographics.age+" "}}</em>
+        <strong ng-show="patient.chiefComplaint.length!=0">CC: </strong><em ng-show="patient.chiefComplaint.length!=0" ng-repeat="item in patient.chiefComplaint">{{item}};</em>
+        <strong ng-show="patient.allergies.allergies.length!=0">Allergies: </strong><em ng-show="patient.allergies.allergies.length!=0">{{patient.allergies.allergies[0].substance+" "}}</em>
+        <strong ng-show="patient.vitals.weight">Weight: </strong><em ng-show="patient.vitals.weight">{{patient.vitals.weight+" lbs "}}({{patient.vitals.weight/2.20462262 | number:1 }} kg)</em>
+      </div>
+
       <div ng-view=""></div>
 
       <div class="footer">

@@ -79,6 +79,47 @@ function HeaderController($scope, $location)
     $scope.isActive = function (viewLocation) { 
         return viewLocation === $location.path();
     };
+
+    $scope.pageName = function () {
+      switch ($location.path()) {
+      case '/':
+      case '/demographics':
+        return "Demographics";
+        break;
+      case '/chiefcompl':
+        return "Chief Complaint";
+        break;
+      case '/ruleout':
+        return "Rule Out Clinical Emergencies";
+        break;
+      case '/hpi':
+        return "History of Present Illness";
+        break;
+      case '/fhandsh':
+        return "Family History and Social History";
+        break;
+      case '/currentmeds':
+        return "Current Medications";
+        break;
+      case '/allergies':
+        return "Allergies";
+        break;
+      case '/differentialdiag':
+        return "Differential Diagnosis";
+        break;
+      case '/physicalexam':
+        return "Physical Examination";
+        break;
+      case '/treatment':
+        return "Treatment";
+        break;
+      case '/education':
+        return "Aftercare Instructions";
+        break;
+      default:
+        return "What a page!!!";
+      }
+    }  
 }
 
 throatApp.factory('Data', function () {
@@ -89,9 +130,9 @@ var patient = { demographics:
                    lastName: "Dow",
                    //sex: {id: 'M', label: 'Male'},
                    sex: "Male",
-                   dateOfBirth: new Date(),
+                   dateOfBirth: new Date("July 21, 1983 01:15:00"),
                    //temporary for testing
-                   age: 22,
+                   age: 31,
                    guardian: "Someone",
                    streetAddress: "123 Happy Str.",
                    apartmentNumber: "8",
@@ -101,7 +142,7 @@ var patient = { demographics:
                    phone: "123-123-1234",
                    email: "johndow@gmail.com"
                   },
-                  chiefComplaint: ["Sore throat"],
+                  chiefComplaint: [],
                   emergentSymptoms: [],
                   emergentDiagnoses: [],
                   otherSymptoms: [],

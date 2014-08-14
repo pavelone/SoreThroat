@@ -1,9 +1,5 @@
 <div class="jumbotron" ng-controller="RuleOutCtrl as patient">
 
-  <h3>Chief Complaint for {{ patient.demographics.firstName+" "+patient.demographics.lastName+" is  "+patient.chiefComplaint }}</h3>
-
-  <h2>Rule out clinical emergencies</h2>
-
   <fs-form-for model="patient">
     <fieldset class="form-horizontal">
 	    <fs-input as="fs-checkbox" name="emergentSymptoms" label="Emergent symptoms to watch" items="emergentSymptomsList">{{ item.diag }}</fs-input>

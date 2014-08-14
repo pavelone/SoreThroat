@@ -13,7 +13,9 @@ angular.module('throatApp')
   .controller('PatientCtrl', function ($scope, Data) {
 
 	this.demographics = Data.get().demographics;
-	$scope.thisPatient = this;
+	this.chiefComplaint = Data.get().chiefComplaint;
+	this.allergies = Data.get().allergies;
+	this.vitals = Data.get().vitals;
 
 	$scope.sex = ['Male','Female'];
 

@@ -1,19 +1,7 @@
 <div class="jumbotron" ng-controller="PhysicalExamCtrl as patient">
 
-  <h3>Chief Complaint for {{ patient.demographics.firstName+" "+patient.demographics.lastName+" is  "+patient.chiefComplaint }}</h3>
-
-  <h2>Physical Examination</h2>
-
   <fs-form-for model="patient">
     <fieldset class="form-horizontal">
-      <legend>Patient</legend>    
-
-        <div class="form-group">
-          <div class="col-xs-6">      
-          <fs-input as="text" ng-disabled="true" name="demographics.age" label="Age"></fs-input>
-          </div>
-        </div>
-
         <legend>Vital signs</legend>
         <div class="form-group">
           <div class="col-xs-6">

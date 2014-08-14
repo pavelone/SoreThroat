@@ -29,3 +29,17 @@
 	background-color: #79b9e7;
 }
 
+.patient-badge {
+	height: 80px;
+	width: 100%;
+}
+
+.patientPhoto{
+	padding:10px;
+	height: 70px;
+	float: left;
+}
+
+.patient-badge em{
+	margin-right: 20px;
+}

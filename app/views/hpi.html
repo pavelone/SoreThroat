@@ -1,8 +1,6 @@
 <div class="jumbotron" ng-controller="HPICtrl as patient">
 
-  <h3>Chief Complaint for {{ patient.demographics.firstName+" "+patient.demographics.lastName+" is  "+patient.chiefComplaint }}</h3>
-
-  <p>History of present illness<a class="btn btn-lg btn-info" ng-click="patient.loadCDA()" ng-href="#/hpi">Load CDA<span class="glyphicon"></span></a></p>
+  <a class="btn btn-lg btn-info" ng-click="patient.loadCDA()" ng-href="#/hpi">Load CDA<span class="glyphicon"></span></a></p>
 
   <fs-form-for model="patient">
     <fieldset class="form-horizontal">
