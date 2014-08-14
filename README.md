@@ -11,7 +11,7 @@ git clone https://github.com/pavelone/SoreThroat.git
 
 cd SoreThroat/
 
-nvm use 0.10 (this is I use to have npm of the version I want)
+nvm use 0.10
 
 npm install
 
