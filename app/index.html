@@ -25,8 +25,8 @@
 
     <!-- Add your site or application content here -->
     <div class="container" ng-controller="HeaderController">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
+      <div class="header headerWalmart">
+        <ul class="nav nav-pills nav-pills-walmart pull-right">
           <li ng-class="{active: isActive('/')}"><a ng-href="#">Demographics</a></li>
           <li ng-class="{active: isActive('/chiefcompl')}"><a ng-href="#/chiefcompl">CC</a></li>
           <li ng-class="{active: isActive('/ruleout')}"><a ng-href="#/ruleout">Rule out</a></li>
@@ -39,7 +39,7 @@
           <li ng-class="{active: isActive('/treatment')}"><a ng-href="#/treatment">Treatment</a></li>
           <li ng-class="{active: isActive('/education')}"><a ng-href="#/education">Aftercare</a></li>
         </ul>
-        <h3 class="text-muted">CCC</h3>
+        <h3 class="text-muted"><img class="walmartLogo" alt="Walmart. Save Money. Live Better." src="../images/logo-header.png"></h3>
       </div>
 
       <div ng-view=""></div>
