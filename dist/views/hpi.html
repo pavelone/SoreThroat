@@ -1,7 +1,36 @@
-<div class="jumbotron" ng-controller="HPICtrl as patient"> <a class="btn btn-lg btn-info" ng-click="patient.loadCDA()" ng-href="#/hpi">Load CDA<span class="glyphicon"></span></a> <fs-form-for model="patient"> <fieldset class="form-horizontal"> <!--
+<div class="jumbotron" ng-controller="HPICtrl as patient">
+
+  <a class="btn btn-lg btn-info" ng-click="patient.loadCDA()" ng-href="#/hpi">Load CDA<span class="glyphicon"></span></a></p>
+
+  <fs-form-for model="patient">
+    <fieldset class="form-horizontal">
+	
+    <!--
     check for recurrent strep
     history of PTA
     HX of rheumatic heart disease
 
     Criteria for consideration include seven or more episodes in the past year, five or more episodes per year in the past 2 years, or three or more episodes per year in the past 3 years, with at least one of the following with each episode: fever greater than 100.9°F, cervical adenopathy, tonsillar exudate, or positive strep test 
-    --> <fs-input as="fs-multiselect" name="HPI.historyOfPresentIllness" freetext="" label="History of present illness" items="historyOfPresentIllnessList">{{ item }}</fs-input> </fieldset> <fieldset class="form-horizontal" ng-show="patient.isRecurrentStrep()"> <legend>Recurrent strep</legend> <em>with at least one of the following with each episode: fever greater than 100.9°F, cervical adenopathy, tonsillar exudate, or positive strep test </em><p> <fs-input as="text" name="HPI.episodesPastYear" required label="Episodes in the past year"></fs-input> <fs-input as="text" name="HPI.episodes2ndYear" required label="Episodes in the year before the past year"></fs-input> <fs-input as="text" name="HPI.episodes3rdYear" required label="Episodes one more year before"></fs-input> </p></fieldset> </fs-form-for> <p><a class="btn btn-lg btn-success" ng-href="#/fhandsh">OK<span class="glyphicon"></span></a> <a class="btn btn-lg" ng-href="#">Cancel<span class="glyphicon"></span></a></p> </div>
+    -->
+    <fs-input as="fs-multiselect" name="HPI.historyOfPresentIllness" freetext="" label="History of present illness" items="historyOfPresentIllnessList">{{ item }}</fs-input>
+    </fieldset>
+
+    <fieldset class="form-horizontal" ng-show="patient.isRecurrentStrep()">
+    <legend>Recurrent strep</legend>
+    <em>with at least one of the following with each episode: fever greater than 100.9°F, cervical adenopathy, tonsillar exudate, or positive strep test </em><p>
+
+    <fs-input as="text" name="HPI.episodesPastYear" required="" label="Episodes in the past year"></fs-input>
+    <fs-input as="text" name="HPI.episodes2ndYear" required="" label="Episodes in the year before the past year"></fs-input>
+    <fs-input as="text" name="HPI.episodes3rdYear" required="" label="Episodes one more year before"></fs-input>
+
+
+    </fieldset>
+
+    
+
+  </fs-form-for>
+
+  <p><a class="btn btn-lg btn-success" ng-href="#/fhandsh">OK<span class="glyphicon"></span></a>
+  <a class="btn btn-lg" ng-href="#">Cancel<span class="glyphicon"></span></a></p>
+  
+</div>

@@ -1,1 +1,22 @@
-<div class="jumbotron" ng-controller="RuleOutCtrl as patient"> <fs-form-for model="patient"> <fieldset class="form-horizontal"> <fs-input as="fs-checkbox" name="emergentSymptoms" label="Emergent symptoms to watch" items="emergentSymptomsList">{{ item.diag }}</fs-input> <fs-input as="fs-checkbox" name="emergentDiagnoses" label="Emergent Diagnoses" items="emergentDiagnosesList">{{ item.diag }}<a href="{{item.edu}}" target="_blank"><img src="../images/information-icon.c733527a.png" alt="info" width="16" height="16"></a></fs-input> <fs-input as="fs-checkbox" name="otherSymptoms" label="Other symptoms to refer" items="otherSymptomsList">{{ item.diag }}</fs-input> </fieldset> </fs-form-for> <p> <a ng-class="patient.classCall911" ng-href="#/ruleout">Call 911<span class="glyphicon"></span></a> <a ng-class="patient.classReferToER" ng-href="#/ruleout">Refer to ER<span class="glyphicon"></span></a> <a ng-class="patient.classReferToER" ng-href="#/ruleout">Refer to Urgent Care<span class="glyphicon"></span></a> <a ng-class="patient.classRuleOut" ng-href="#/hpi">Rule Out<span class="glyphicon"></span></a> <a class="btn btn-lg" ng-href="#">Cancel<span class="glyphicon"></span></a></p> </div>
+<div class="jumbotron" ng-controller="RuleOutCtrl as patient">
+
+  <fs-form-for model="patient">
+    <fieldset class="form-horizontal">
+	    <fs-input as="fs-checkbox" name="emergentSymptoms" label="Emergent symptoms to watch" items="emergentSymptomsList">{{ item.diag }}</fs-input>
+
+	    <fs-input as="fs-checkbox" name="emergentDiagnoses" label="Emergent Diagnoses" items="emergentDiagnosesList">{{ item.diag }}<a href="{{item.edu}}" target="_blank"><img src="../images/information-icon.png" alt="info" width="16" height="16"></a></fs-input>
+
+	    <fs-input as="fs-checkbox" name="otherSymptoms" label="Other symptoms to refer" items="otherSymptomsList">{{ item.diag }}</fs-input>
+
+    </fieldset>
+  </fs-form-for>
+
+  <p>
+  <a ng-class="patient.classCall911" ng-href="#/ruleout">Call 911<span class="glyphicon"></span></a>
+  <a ng-class="patient.classReferToER" ng-href="#/ruleout">Refer to ER<span class="glyphicon"></span></a>
+  <a ng-class="patient.classReferToER" ng-href="#/ruleout">Refer to Urgent Care<span class="glyphicon"></span></a>
+  <a ng-class="patient.classRuleOut" ng-href="#/hpi">Rule Out<span class="glyphicon"></span></a>
+  <a class="btn btn-lg" ng-href="#">Cancel<span class="glyphicon"></span></a></p>
+
+  
+</div>

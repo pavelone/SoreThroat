@@ -1,1 +1,18 @@
-<div class="jumbotron" ng-controller="FHAndSHCtrl as patient"> <fs-form-for model="patient"> <fieldset class="form-horizontal"> <fs-input as="fs-checkbox" name="familyHistory" label="Family History" items="familyHistoryList">{{ item }}</fs-input> </fieldset> <textarea class="form-control" rows="3" ng-model="familyHistoryComments"></textarea> <p> </p></fs-form-for> <p><a class="btn btn-lg btn-success" ng-href="#/currentmeds">OK<span class="glyphicon"></span></a> <a class="btn btn-lg" ng-href="#">Cancel<span class="glyphicon"></span></a></p> </div>
+<div class="jumbotron" ng-controller="FHAndSHCtrl as patient">
+
+  <fs-form-for model="patient">
+    <fieldset class="form-horizontal">
+
+    <fs-input as="fs-checkbox" name="familyHistory" label="Family History" items="familyHistoryList">{{ item }}</fs-input>
+	
+    </fieldset>
+
+  <textarea class="form-control" rows="3" ng-model="familyHistoryComments"></textarea>
+  <p>
+
+  </fs-form-for>
+
+  <p><a class="btn btn-lg btn-success" ng-href="#/currentmeds">OK<span class="glyphicon"></span></a>
+  <a class="btn btn-lg" ng-href="#">Cancel<span class="glyphicon"></span></a></p>
+  
+</div>

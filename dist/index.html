@@ -1,11 +1,115 @@
-<!doctype html> <html class="no-js"> <head> <meta charset="utf-8"> <title></title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/vendor.76464b3c.css"> <link rel="stylesheet" href="styles/demographics.5e806962.css">  <body ng-app="throatApp"> <!--[if lt IE 7]>
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-formstamp/build/formstamp.css" />
+    <link rel="stylesheet" href="bower_components/ng-grid/ng-grid.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/demographics.css -->
+    <link rel="stylesheet" href="styles/app.css" />
+    <!-- endbuild -->
+
+  </head>
+  <body ng-app="throatApp">
+    <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]--> <!-- Add your site or application content here --> <div class="container" ng-controller="HeaderController"> <div class="header headerWalmart"> <ul class="nav nav-pills nav-pills-walmart pull-right"> <li ng-class="{active: isActive('/')}"><a ng-href="#">Demographics</a></li> <li ng-class="{active: isActive('/chiefcompl')}"><a ng-href="#/chiefcompl">CC</a></li> <li ng-class="{active: isActive('/ruleout')}"><a ng-href="#/ruleout">Rule out</a></li> <li ng-class="{active: isActive('/hpi')}"><a ng-href="#/hpi">HPI</a></li> <li ng-class="{active: isActive('/fhandsh')}"><a ng-href="#/fhandsh">FH & SH</a></li> <li ng-class="{active: isActive('/currentmeds')}"><a ng-href="#/currentmeds">Meds</a></li> <li ng-class="{active: isActive('/allergies')}"><a ng-href="#/allergies">Allergies</a></li> <li ng-class="{active: isActive('/differentialdiag')}"><a ng-href="#/differentialdiag">DD</a></li> <li ng-class="{active: isActive('/physicalexam')}"><a ng-href="#/physicalexam">PE</a></li> <li ng-class="{active: isActive('/treatment')}"><a ng-href="#/treatment">Treatment</a></li> <li ng-class="{active: isActive('/education')}"><a ng-href="#/education">Aftercare</a></li> </ul> <h3 class="text-muted"><img class="walmartLogo" alt="Walmart. Save Money. Live Better." src="../images/logo-header.c97fd424.png"></h3> </div> <div class="patient-badge" ng-controller="PatientCtrl as patient"> <img class="patientPhoto" alt="No photo." src="../images/no_photo_report.19b51019.png"> <h3 class="text-muted" ng-controller="HeaderController">{{pageName()}}</h3> <strong ng-show="patient.demographics.firstName">Name: </strong><em ng-show="patient.demographics.firstName">{{patient.demographics.firstName+" "+patient.demographics.lastName+" "}}</em> <strong ng-show="patient.demographics.sex">Sex: </strong><em ng-show="patient.demographics.sex">{{patient.demographics.sex+" "}}</em> <strong ng-show="patient.demographics.age">Age: </strong><em ng-show="patient.demographics.age">{{patient.demographics.age+" "}}</em> <strong ng-show="patient.chiefComplaint.length!=0">CC: </strong><em ng-show="patient.chiefComplaint.length!=0" ng-repeat="item in patient.chiefComplaint">{{item}};</em> <strong ng-show="patient.allergies.allergies.length!=0">Allergies: </strong><em ng-show="patient.allergies.allergies.length!=0">{{patient.allergies.allergies[0].substance+" "}}</em> <strong ng-show="patient.vitals.weight">Weight: </strong><em ng-show="patient.vitals.weight">{{patient.vitals.weight+" lbs "}}({{patient.vitals.weight/2.20462262 | number:1 }} kg)</em> </div> <div ng-view=""></div> <div class="footer"> <p><a class="" target="_blank" href="http://choice-hs.com">Choice-HS.com<span class="glyphicon"></span></a></p> </div> </div> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="container" ng-controller="HeaderController">
+      <div class="header headerWalmart">
+        <ul class="nav nav-pills nav-pills-walmart pull-right">
+          <li ng-class="{active: isActive('/')}"><a ng-href="#">Demographics</a></li>
+          <li ng-class="{active: isActive('/chiefcompl')}"><a ng-href="#/chiefcompl">CC</a></li>
+          <li ng-class="{active: isActive('/ruleout')}"><a ng-href="#/ruleout">Rule out</a></li>
+          <li ng-class="{active: isActive('/hpi')}"><a ng-href="#/hpi">HPI</a></li>
+          <li ng-class="{active: isActive('/fhandsh')}"><a ng-href="#/fhandsh">FH & SH</a></li>
+          <li ng-class="{active: isActive('/currentmeds')}"><a ng-href="#/currentmeds">Meds</a></li>
+          <li ng-class="{active: isActive('/allergies')}"><a ng-href="#/allergies">Allergies</a></li>
+          <li ng-class="{active: isActive('/differentialdiag')}"><a ng-href="#/differentialdiag">DD</a></li>
+          <li ng-class="{active: isActive('/physicalexam')}"><a ng-href="#/physicalexam">PE</a></li>
+          <li ng-class="{active: isActive('/treatment')}"><a ng-href="#/treatment">Treatment</a></li>
+          <li ng-class="{active: isActive('/education')}"><a ng-href="#/education">Aftercare</a></li>
+        </ul>
+        <h3 class="text-muted"><img class="walmartLogo" alt="Walmart. Save Money. Live Better." src="../images/logo-header.png"></h3>
+      </div>
+
+      <div class="patient-badge" ng-controller="PatientCtrl as patient">
+        <img class="patientPhoto" alt="No photo." src="../images/no_photo_report.png">
+        <h3 class="text-muted" ng-controller="HeaderController">{{pageName()}}</h3>
+        <strong ng-show="patient.demographics.firstName">Name: </strong><em ng-show="patient.demographics.firstName">{{patient.demographics.firstName+" "+patient.demographics.lastName+" "}}</em>
+        <strong ng-show="patient.demographics.sex">Sex: </strong><em ng-show="patient.demographics.sex">{{patient.demographics.sex+" "}}</em>
+        <strong ng-show="patient.demographics.age">Age: </strong><em ng-show="patient.demographics.age">{{patient.demographics.age+" "}}</em>
+        <strong ng-show="patient.chiefComplaint.length!=0">CC: </strong><em ng-show="patient.chiefComplaint.length!=0" ng-repeat="item in patient.chiefComplaint">{{item}};</em>
+        <strong ng-show="patient.allergies.allergies.length!=0">Allergies: </strong><em ng-show="patient.allergies.allergies.length!=0">{{patient.allergies.allergies[0].substance+" "}}</em>
+        <strong ng-show="patient.vitals.weight">Weight: </strong><em ng-show="patient.vitals.weight">{{patient.vitals.weight+" lbs "}}({{patient.vitals.weight/2.20462262 | number:1 }} kg)</em>
+      </div>
+
+      <div ng-view=""></div>
+
+      <div class="footer">
+        <p><a class="" target="_blank" href="http://choice-hs.com">Choice-HS.com<span class="glyphicon"></span></a></p>
+      </div>
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
        ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');</script> <!--[if lt IE 9]>
-    <script src="scripts/oldieshim.ff90b0fb.js"></script>
-    <![endif]--> <script src="scripts/vendor.1f8dcf6c.js"></script> <script src="scripts/scripts.e3d9e8c0.js"></script>  
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-formstamp/build/formstamp.js"></script>
+    <script src="bower_components/ng-grid/build/ng-grid.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/demographics.js"></script>
+        <script src="scripts/controllers/chiefcompl.js"></script>
+        <script src="scripts/controllers/ruleout.js"></script>
+        <script src="scripts/controllers/hpi.js"></script>
+        <script src="scripts/controllers/fhandsh.js"></script>
+        <script src="scripts/controllers/currentmeds.js"></script>
+        <script src="scripts/controllers/allergies.js"></script>
+        <script src="scripts/controllers/differentialdiag.js"></script>
+        <script src="scripts/controllers/physicalexam.js"></script>
+        <script src="scripts/controllers/treatment.js"></script>
+        <script src="scripts/controllers/education.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
