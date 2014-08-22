@@ -70,6 +70,10 @@ module.exports = function (grunt) {
         src: ['**'],
         expand: true,
         dest: app_prefix + 'images/'
+      },
+      ico: {
+        src: 'app/favicon.ico',
+        dest: app_prefix + 'favicon.ico'
       }
     },
     connect: {
