@@ -22,51 +22,51 @@ var throatApp = angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/demographics.html',
+        templateUrl: '/demographics.html',
         controller: 'PatientCtrl'
       })
       .when('/chiefcompl', {
-        templateUrl: 'views/chiefcompl.html',
+        templateUrl: '/chiefcompl.html',
         controller: 'ChiefComplCtrl'
       })
       .when('/demographics', {
-        templateUrl: 'views/demographics.html',
+        templateUrl: '/demographics.html',
         controller: 'PatientCtrl'
       })
       .when('/ruleout', {
-        templateUrl: 'views/ruleout.html',
+        templateUrl: '/ruleout.html',
         controller: 'RuleOutCtrl'
       })
       .when('/hpi', {
-        templateUrl: 'views/hpi.html',
+        templateUrl: '/hpi.html',
         controller: 'HPICtrl'
       })
       .when('/fhandsh', {
-        templateUrl: 'views/fhandsh.html',
+        templateUrl: '/fhandsh.html',
         controller: 'FHAndSHCtrl'
       })
       .when('/currentmeds', {
-        templateUrl: 'views/currentmeds.html',
+        templateUrl: '/currentmeds.html',
         controller: 'CurrentMedsCtrl'
       })
       .when('/allergies', {
-        templateUrl: 'views/allergies.html',
+        templateUrl: '/allergies.html',
         controller: 'AllergiesCtrl'
       })
       .when('/differentialdiag', {
-        templateUrl: 'views/differentialdiag.html',
+        templateUrl: '/differentialdiag.html',
         controller: 'DifferentialDiagCtrl'
       })
       .when('/physicalexam', {
-        templateUrl: 'views/physicalexam.html',
+        templateUrl: '/physicalexam.html',
         controller: 'PhysicalExamCtrl'
       })
       .when('/treatment', {
-        templateUrl: 'views/treatment.html',
+        templateUrl: '/treatment.html',
         controller: 'TreatmentCtrl'
       })
       .when('/education', {
-        templateUrl: 'views/education.html',
+        templateUrl: '/education.html',
         controller: 'EducationCtrl'
       })
       .otherwise({
