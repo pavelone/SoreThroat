@@ -1261,18 +1261,18 @@ angular.module('throatApp').run(['$templateCache', function($templateCache) {
     "  <fs-form-for model=\"patient\">\n" +
     "    <fieldset class=\"form-horizontal\">\n" +
     "\n" +
-    "\t    <fs-input as=\"fs-checkbox\" name=\"differentialDiagnosis.emergentDiagnoses\" label=\"Emergent Diagnoses\" items=\"emergentDiagnosesList\">{{ item.diag }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"../images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
+    "\t    <fs-input as=\"fs-checkbox\" name=\"differentialDiagnosis.emergentDiagnoses\" label=\"Emergent Diagnoses\" items=\"emergentDiagnosesList\">{{ item.diag }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
     "\n" +
-    "      <fs-input as=\"fs-checkbox\" name=\"differentialDiagnosis.bacterialPharyngitisCauses\" label=\"Bacterial Pharyngitis Causes\" items=\"bacterialPharyngitisCausesList\">{{ item.diag }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"../images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
+    "      <fs-input as=\"fs-checkbox\" name=\"differentialDiagnosis.bacterialPharyngitisCauses\" label=\"Bacterial Pharyngitis Causes\" items=\"bacterialPharyngitisCausesList\">{{ item.diag }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
     "\n" +
     "      <div ng-show=\"patient.showOther\" >\n" +
-    "      <fs-input as=\"fs-checkbox\" name=\"differentialDiagnosis.otherBacterialPathogens\" label=\"Other Bacterial Pathogens\" items=\"otherBacterialPathogensList\">{{ item.diag }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"../images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
+    "      <fs-input as=\"fs-checkbox\" name=\"differentialDiagnosis.otherBacterialPathogens\" label=\"Other Bacterial Pathogens\" items=\"otherBacterialPathogensList\">{{ item.diag }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
     "      </div>\n" +
     "\n" +
-    "      <fs-input as=\"fs-checkbox\" name=\"differentialDiagnosis.viralCauses\" label=\"Viral causes\" items=\"viralCausesList\">{{ item.diag }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"../images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
+    "      <fs-input as=\"fs-checkbox\" name=\"differentialDiagnosis.viralCauses\" label=\"Viral causes\" items=\"viralCausesList\">{{ item.diag }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
     "\n" +
     "      <div ng-show=\"patient.showOther\" >\n" +
-    "        <fs-input as=\"fs-checkbox\" name=\"differentialDiagnosis.otherViralCauses\" label=\"Other Viral Causes\" items=\"otherViralCausesList\">{{ item.diag }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"../images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
+    "        <fs-input as=\"fs-checkbox\" name=\"differentialDiagnosis.otherViralCauses\" label=\"Other Viral Causes\" items=\"otherViralCausesList\">{{ item.diag }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
     "      </div>\n" +
     "\n" +
     "    </fieldset>\n" +
@@ -1297,31 +1297,31 @@ angular.module('throatApp').run(['$templateCache', function($templateCache) {
     "      <legend>Relevant patient education</legend>\n" +
     "      \n" +
     "      <div ng-show=\"diffDiagnosisList.length!=0\">\n" +
-    "      <fs-input as=\"fs-checkbox\" name=\"education.workingDiagnosis\" label=\"Working Diagnosis\" items=\"diffDiagnosisList\">{{ item.item }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"../images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
+    "      <fs-input as=\"fs-checkbox\" name=\"education.workingDiagnosis\" label=\"Working Diagnosis\" items=\"diffDiagnosisList\">{{ item.item }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
     "      </div>\n" +
     "\n" +
     "      <div ng-show=\"labTestList.length!=0\">\n" +
-    "      <fs-input as=\"fs-checkbox\" name=\"education.labTests\" label=\"Lab tests\" items=\"labTestList\">{{ item.item }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"../images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
+    "      <fs-input as=\"fs-checkbox\" name=\"education.labTests\" label=\"Lab tests\" items=\"labTestList\">{{ item.item }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
     "      </div>\n" +
     "\n" +
     "      <div ng-show=\"firstLineList.length!=0\">\n" +
-    "      <fs-input as=\"fs-checkbox\" name=\"education.firstLine\" label=\"First Line\" items=\"firstLineList\">{{ item.item }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"../images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
+    "      <fs-input as=\"fs-checkbox\" name=\"education.firstLine\" label=\"First Line\" items=\"firstLineList\">{{ item.item }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
     "      </div>\n" +
     "\n" +
     "      <div ng-show=\"secondLineList.length!=0\">\n" +
-    "      <fs-input as=\"fs-checkbox\" name=\"education.secondLine\" label=\"Second Line\" items=\"secondLineList\">{{ item.item }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"../images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
+    "      <fs-input as=\"fs-checkbox\" name=\"education.secondLine\" label=\"Second Line\" items=\"secondLineList\">{{ item.item }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
     "      </div>\n" +
     "\n" +
     "      <div ng-show=\"systemicTherapyList.length!=0\">\n" +
-    "      <fs-input as=\"fs-checkbox\" name=\"education.systemicTherapy\" label=\"Systemic Therapy\" items=\"systemicTherapyList\">{{ item.item }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"../images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
+    "      <fs-input as=\"fs-checkbox\" name=\"education.systemicTherapy\" label=\"Systemic Therapy\" items=\"systemicTherapyList\">{{ item.item }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
     "      </div>\n" +
     "\n" +
     "      <div ng-show=\"topicalTherapyList.length!=0\">\n" +
-    "      <fs-input as=\"fs-checkbox\" name=\"education.topicalTherapy\" label=\"Topical Therapy\" items=\"topicalTherapyList\">{{ item.item }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"../images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
+    "      <fs-input as=\"fs-checkbox\" name=\"education.topicalTherapy\" label=\"Topical Therapy\" items=\"topicalTherapyList\">{{ item.item }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
     "      </div>\n" +
     "\n" +
     "      <div ng-show=\"corticosteroidsList.length!=0\">\n" +
-    "      <fs-input as=\"fs-checkbox\" name=\"education.corticosteroids\" label=\"Corticosteroids\" items=\"corticosteroidsList\">{{ item.item }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"../images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
+    "      <fs-input as=\"fs-checkbox\" name=\"education.corticosteroids\" label=\"Corticosteroids\" items=\"corticosteroidsList\">{{ item.item }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
     "      </div>\n" +
     "\n" +
     "    </fieldset>\n" +
@@ -1482,7 +1482,7 @@ angular.module('throatApp').run(['$templateCache', function($templateCache) {
     "    <fieldset class=\"form-horizontal\">\n" +
     "\t    <fs-input as=\"fs-checkbox\" name=\"emergentSymptoms\" label=\"Emergent symptoms to watch\" items=\"emergentSymptomsList\">{{ item.diag }}</fs-input>\n" +
     "\n" +
-    "\t    <fs-input as=\"fs-checkbox\" name=\"emergentDiagnoses\" label=\"Emergent Diagnoses\" items=\"emergentDiagnosesList\">{{ item.diag }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"../images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
+    "\t    <fs-input as=\"fs-checkbox\" name=\"emergentDiagnoses\" label=\"Emergent Diagnoses\" items=\"emergentDiagnosesList\">{{ item.diag }}<a href=\"{{item.edu}}\" target=\"_blank\"><img src=\"images/information-icon.png\" alt=\"info\" width=\"16\" height=\"16\"></a></fs-input>\n" +
     "\n" +
     "\t    <fs-input as=\"fs-checkbox\" name=\"otherSymptoms\" label=\"Other symptoms to refer\" items=\"otherSymptomsList\">{{ item.diag }}</fs-input>\n" +
     "\n" +

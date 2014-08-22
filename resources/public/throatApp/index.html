@@ -37,11 +37,11 @@
           <li ng-class="{active: isActive('/treatment')}"><a ng-href="#/treatment">Treatment</a></li>
           <li ng-class="{active: isActive('/education')}"><a ng-href="#/education">Aftercare</a></li>
         </ul>
-        <h3 class="text-muted"><img class="walmartLogo" alt="Walmart. Save Money. Live Better." src="../images/logo-header.png"></h3>
+        <h3 class="text-muted"><img class="walmartLogo" alt="Walmart. Save Money. Live Better." src="images/logo-header.png"></h3>
       </div>
 
       <div class="patient-badge" ng-controller="PatientCtrl as patient">
-        <img class="patientPhoto" alt="No photo." src="../images/no_photo_report.png">
+        <img class="patientPhoto" alt="No photo." src="images/no_photo_report.png">
         <h3 class="text-muted" ng-controller="HeaderController">{{pageName()}}</h3>
         <strong ng-show="patient.demographics.firstName">Name: </strong><em ng-show="patient.demographics.firstName">{{patient.demographics.firstName+" "+patient.demographics.lastName+" "}}</em>
         <strong ng-show="patient.demographics.sex">Sex: </strong><em ng-show="patient.demographics.sex">{{patient.demographics.sex+" "}}</em>
