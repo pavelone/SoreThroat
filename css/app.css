@@ -1,0 +1,45 @@
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: 100%; 
+    height: 200px
+}
+
+.headerWalmart{
+	 background-color:#007dc6;
+	 border-radius: 5px;
+}
+
+.walmartLogo{
+	padding:10px;
+	height: 40px;
+}
+
+.nav-pills-walmart li a {
+	color: white;
+}
+
+.nav-pills-walmart li a:hover {
+	color: white;	
+	background-color: #79b9e7;
+}
+
+.nav-pills-walmart li.active a,
+.nav-pills-walmart li.active a:hover {
+	color: #007dc6;
+	background-color: #79b9e7;
+}
+
+.patient-badge {
+	height: 80px;
+	width: 100%;
+}
+
+.patientPhoto{
+	padding:10px;
+	height: 70px;
+	float: left;
+}
+
+.patient-badge em{
+	margin-right: 20px;
+}
